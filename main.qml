@@ -364,6 +364,7 @@ Window {
                             property string prev: "Enter Answer"
                             font.family: "Helvetica"
                             font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                         TextArea{
                             id:answer_text_medium
@@ -374,6 +375,7 @@ Window {
                             visible:ex_selector.state=="medium"
                             font.family: "Helvetica"
                             font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                         TextArea{
                             id:answer_text_difficult
@@ -384,6 +386,7 @@ Window {
                             visible:ex_selector.state=="difficult"
                             font.family: "Helvetica"
                             font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                     }
                 }
@@ -462,10 +465,8 @@ Window {
                         onClicked: {
                             started=false;
                             logTextAreas();
-                            logger.write_finish()
-                            messageBox.title="Finished"
-                            messageBox.text="Thanks for your participation"
-                            messageBox.visible=true
+                            logger.write_finish();
+                            final_questions.visible=true;
                         }
                     }
                 }
@@ -650,13 +651,12 @@ Window {
     }
 
     Rectangle{
-        visible:true
+        visible:false
         id:final_questions
         anchors.fill: parent
         color:"#e3f2fd"
         Rectangle{
-            color:"#2962ff"
-            width: 9/16*parent.height
+            width: 3/4*parent.height
             height: parent.height-20
             anchors.centerIn: parent
             anchors.margins: 10
@@ -664,29 +664,49 @@ Window {
             layer.effect: DropShadow {
                 transparentBorder: true
             }
+            Rectangle{
+                id:questionnaire_title
+                color:"#2962ff"
+                width: parent.width
+                height: 75
+                Label{
+                    anchors.fill: parent
+                    anchors.margins: 10
+                    anchors.verticalCenter: parent.verticalCenter
+                    text:"Questionnaire Final"
+                    color: "white"
+                    fontSizeMode: Text.Fit
+                    minimumPixelSize: 10; font.pixelSize: 35
+                }
+            }
             Item{
-                anchors.fill: parent
+                id:list_item
+                anchors.top: questionnaire_title.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: questionnaire_done_button.top
                 anchors.topMargin: 20
                 anchors.leftMargin: 20
-                anchors.bottomMargin: 20
                 ScrollView{
                     anchors.fill: parent
                     horizontalScrollBarPolicy:Qt.ScrollBarAlwaysOff
                     ColumnLayout{
+                        width: list_item.width
                         anchors.margins: 20
                         spacing: 10
                         /*-----Age-----*/
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Age:"
                             font.bold: true
-                            font.pointSize: 20
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: agegroup }
                         Column{
                             leftPadding: 10
                             RadioButton {
                                 text: "13"
-                                height: 1.5*implicitHeight
                                 exclusiveGroup: agegroup
                             }
                             RadioButton {
@@ -705,8 +725,11 @@ Window {
                         /*-------*/
 
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Sexe:"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
 
                         }
                         ExclusiveGroup { id: sexgroup }
@@ -723,115 +746,151 @@ Window {
                         }
                         /*-------*/
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Niveau scolaire:"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
-                        Label{
-                            text: "En français"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: francegroup }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "Niveau 1"
-                                exclusiveGroup: francegroup
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "En français:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "Niveau 2"
-                                exclusiveGroup: francegroup
-                            }
-                            RadioButton {
-                                text: "Autre"
-                                exclusiveGroup: francegroup
-                                TextField{
-                                    anchors.left: parent.right
-                                    anchors.leftMargin: 5
+                            ExclusiveGroup { id: francegroup }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "Niveau 1"
+                                    exclusiveGroup: francegroup
+                                }
+                                RadioButton {
+                                    text: "Niveau 2"
+                                    exclusiveGroup: francegroup
+                                }
+                                RadioButton {
+                                    text: "Autre"
+                                    exclusiveGroup: francegroup
+                                    TextField{
+                                        anchors.left: parent.right
+                                        anchors.leftMargin: 5
+                                    }
                                 }
                             }
                         }
                         /*-------*/
-                        Label{
-                            text: "En mathématiques"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: mathematiques }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "Niveau 1"
-                                exclusiveGroup: mathematiques
-                            }
-                            RadioButton {
-                                text: "Niveau 2"
-                                exclusiveGroup: mathematiques
-                            }
-                            RadioButton {
-                                text: "Autre"
-                                exclusiveGroup: mathematiques
-                                TextField{
-                                    anchors.left: parent.right
-                                    anchors.leftMargin: 5
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
 
+                                text: "En mathématiques:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
+                            }
+
+                            ExclusiveGroup { id: mathematiques }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "Niveau 1"
+                                    exclusiveGroup: mathematiques
+                                }
+                                RadioButton {
+                                    text: "Niveau 2"
+                                    exclusiveGroup: mathematiques
+                                }
+                                RadioButton {
+                                    text: "Autre"
+                                    exclusiveGroup: mathematiques
+                                    TextField{
+                                        anchors.left: parent.right
+                                        anchors.leftMargin: 5
+
+                                    }
                                 }
                             }
                         }
                         /*-------*/
-                        Label{
-                            text: "En allemand"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: allemand }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "Niveau 1"
-                                exclusiveGroup: allemand
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "En allemand:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "Niveau 2"
-                                exclusiveGroup: allemand
-                            }
-                            RadioButton {
-                                text: "Autre"
-                                exclusiveGroup: allemand
-                                TextField{
-                                    anchors.left: parent.right
-                                    anchors.leftMargin: 5
+                            ExclusiveGroup { id: allemand }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "Niveau 1"
+                                    exclusiveGroup: allemand
+                                }
+                                RadioButton {
+                                    text: "Niveau 2"
+                                    exclusiveGroup: allemand
+                                }
+                                RadioButton {
+                                    text: "Autre"
+                                    exclusiveGroup: allemand
+                                    TextField{
+                                        anchors.left: parent.right
+                                        anchors.leftMargin: 5
 
+                                    }
                                 }
                             }
                         }
                         /*-------*/
-                        Label{
-                            text: "En allemand"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: sciences }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "Niveau 1"
-                                exclusiveGroup: sciences
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "En sciences:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "Niveau 2"
-                                exclusiveGroup: sciences
-                            }
-                            RadioButton {
-                                text: "Autre"
-                                exclusiveGroup: sciences
-                                TextField{
-                                    anchors.left: parent.right
-                                    anchors.leftMargin: 5
+                            ExclusiveGroup { id: sciences }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "Niveau 1"
+                                    exclusiveGroup: sciences
+                                }
+                                RadioButton {
+                                    text: "Niveau 2"
+                                    exclusiveGroup: sciences
+                                }
+                                RadioButton {
+                                    text: "Autre"
+                                    exclusiveGroup: sciences
+                                    TextField{
+                                        anchors.left: parent.right
+                                        anchors.leftMargin: 5
 
+                                    }
                                 }
                             }
                         }
                         /*-------*/
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Que penses-tu du français ?"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: penses_france }
                         Column{
@@ -855,8 +914,11 @@ Window {
                         }
                         /*-------*/
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Que penses-tu des mathématiques?"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: penses_mathematiques }
                         Column{
@@ -880,9 +942,19 @@ Window {
                         }
                         /*-------*/
                         Label{
-                            text: "A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?
-                                Le chiffre 1 correspond à une fréquence de connexion minimale et le chiffre 10 correspond à une fréquence maximale."
+                            Layout.maximumWidth: list_item.width-30
+                            text: "A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
+
+                        }
+                        Label{
+                            Layout.maximumWidth: list_item.width-30
+                            text:"Le chiffre 1 correspond à une fréquence de connexion minimale et le chiffre 10 correspond à une fréquence maximale."
+                            font.italic: true
+                            font.pointSize: 12
+                            wrapMode: Text.WordWrap
 
                         }
                         ExclusiveGroup { id: ordinateur }
@@ -935,108 +1007,168 @@ Window {
                             }
                         }
                         Label{
+                            Layout.maximumWidth: list_item.width-30
                             text: "Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?"
                             font.bold: true
+                            font.pointSize: 14
+                            wrapMode: Text.WordWrap
                         }
-                        Label{
-                            text: "L’exercice de maths sur les fractions:"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: revenons_fractions }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_fractions
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "L’exercice de maths sur les fractions:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_fractions
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_fractions
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_fractions
+                            ExclusiveGroup { id: revenons_fractions }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "je l’ai trouvé très plaisant"
+                                    exclusiveGroup: revenons_fractions
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé plaisant"
+                                    exclusiveGroup: revenons_fractions
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé ennuyeux"
+                                    exclusiveGroup: revenons_fractions
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé très ennuyeux"
+                                    exclusiveGroup: revenons_fractions
+                                }
                             }
                         }
                         /*------*/
-                        Label{
-                            text: "L’exercice de maths au sujet de l’horloge:"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: revenons_horloge }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_horloge
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "L’exercice de maths au sujet de l’horloge:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_horloge
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_horloge
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_horloge
+                            ExclusiveGroup { id: revenons_horloge }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "je l’ai trouvé très plaisant"
+                                    exclusiveGroup: revenons_horloge
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé plaisant"
+                                    exclusiveGroup: revenons_horloge
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé ennuyeux"
+                                    exclusiveGroup: revenons_horloge
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé très ennuyeux"
+                                    exclusiveGroup: revenons_horloge
+                                }
                             }
                         }
                         /*------*/
-                        Label{
-                            text: "L’exercice de français sur les antonymes:"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: revenons_antonymes }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_antonymes
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "L’exercice de français sur les antonymes:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_antonymes
+                            ExclusiveGroup { id: revenons_antonymes }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "je l’ai trouvé très plaisant"
+                                    exclusiveGroup: revenons_antonymes
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé plaisant"
+                                    exclusiveGroup: revenons_antonymes
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé ennuyeux"
+                                    exclusiveGroup: revenons_antonymes
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé très ennuyeux"
+                                    exclusiveGroup: revenons_antonymes
+                                }
                             }
                         }
                         /*------*/
-                        Label{
-                            text: "L’exercice de français sur les débuts de texte à lire:"
-                            font.bold: true
-                        }
-                        ExclusiveGroup { id: revenons_lire }
                         Column{
                             leftPadding: 10
-                            RadioButton {
-                                             text: "je l’ai trouvé très plaisant"
-                                             exclusiveGroup: revenons_lire
-                                         }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_lire
+                            spacing: 10
+                            Label{
+                                Layout.maximumWidth: list_item.width-30
+                                text: "L’exercice de français sur les débuts de texte à lire:"
+                                font.italic: true
+                                font.pointSize: 12
+                                wrapMode: Text.WordWrap
                             }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_lire
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_lire
+                            ExclusiveGroup { id: revenons_lire }
+                            Column{
+                                leftPadding: 10
+                                RadioButton {
+                                    text: "je l’ai trouvé très plaisant"
+                                    exclusiveGroup: revenons_lire
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé plaisant"
+                                    exclusiveGroup: revenons_lire
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé ennuyeux"
+                                    exclusiveGroup: revenons_lire
+                                }
+                                RadioButton {
+                                    text: "je l’ai trouvé très ennuyeux"
+                                    exclusiveGroup: revenons_lire
+                                }
                             }
                         }
+                    }
+                }
+            }
+            Rectangle{
+                id:questionnaire_done_button
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.margins: 10
+                width: 75
+                color: "#00e676"
+                height: width
+                radius: width/2
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                }
+                Image{
+                    anchors.fill: parent
+                    anchors.centerIn: parent
+                    source:"qrc:/done.png"
+                }
+                MouseArea{
+                    anchors.fill: parent;
+                    onPressed: parent.layer.enabled=false
+                    onReleased: parent.layer.enabled=true
+                    onClicked: {
+                        messageBox.title="Finished"
+                        messageBox.text="Thanks for your participation"
+                        messageBox.visible=true
                     }
                 }
             }
