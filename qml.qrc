@@ -1,93 +1,39 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
         <file>AvatarListModel.qml</file>
-        <file>instruction.png</file>
         <file>settings.png</file>
         <file>Button-Next.png</file>
         <file>done.png</file>
+        <file>InstructionsPage.qml</file>
+        <file>ExercisePage.qml</file>
+        <file>QuestionnairePage.qml</file>
+        <file>ExerciseFacile.qml</file>
+        <file>AvatarDelegate.qml</file>
+        <file>AvatarBannerListModel.qml</file>
+        <file>ExerciseDifficile.qml</file>
     </qresource>
     <qresource prefix="/avatars">
-        <file>avatar_imgs/Primary/C01.png</file>
-        <file>avatar_imgs/Primary/C02.png</file>
-        <file>avatar_imgs/Primary/C03.png</file>
-        <file>avatar_imgs/Primary/C04.png</file>
-        <file>avatar_imgs/Primary/C05.png</file>
-        <file>avatar_imgs/Primary/D01.png</file>
-        <file>avatar_imgs/Primary/D02.png</file>
-        <file>avatar_imgs/Primary/D03.png</file>
-        <file>avatar_imgs/Primary/D04.png</file>
-        <file>avatar_imgs/Primary/D05.png</file>
-        <file>avatar_imgs/Primary/E01.png</file>
-        <file>avatar_imgs/Primary/E02.png</file>
-        <file>avatar_imgs/Primary/E03.png</file>
-        <file>avatar_imgs/Primary/E04.png</file>
-        <file>avatar_imgs/Primary/E05.png</file>
-        <file>avatar_imgs/Primary/F01.png</file>
-        <file>avatar_imgs/Primary/F02.png</file>
-        <file>avatar_imgs/Primary/F03.png</file>
-        <file>avatar_imgs/Primary/F04.png</file>
-        <file>avatar_imgs/Primary/F05.png</file>
-        <file>avatar_imgs/Primary/FA01.png</file>
-        <file>avatar_imgs/Primary/FA02.png</file>
-        <file>avatar_imgs/Primary/FA03.png</file>
-        <file>avatar_imgs/Primary/FA04.png</file>
-        <file>avatar_imgs/Primary/FA05.png</file>
-        <file>avatar_imgs/Primary/FB01.png</file>
-        <file>avatar_imgs/Primary/FB02.png</file>
-        <file>avatar_imgs/Primary/FB03.png</file>
-        <file>avatar_imgs/Primary/FB04.png</file>
-        <file>avatar_imgs/Primary/FB05.png</file>
-        <file>avatar_imgs/Primary/FC01.png</file>
-        <file>avatar_imgs/Primary/FC02.png</file>
-        <file>avatar_imgs/Primary/FC03.png</file>
-        <file>avatar_imgs/Primary/FC04.png</file>
-        <file>avatar_imgs/Primary/FC05.png</file>
-        <file>avatar_imgs/Primary/FD01.png</file>
-        <file>avatar_imgs/Primary/FD02.png</file>
-        <file>avatar_imgs/Primary/FD03.png</file>
-        <file>avatar_imgs/Primary/FD04.png</file>
-        <file>avatar_imgs/Primary/FD05.png</file>
-        <file>avatar_imgs/Primary/FE01.png</file>
-        <file>avatar_imgs/Primary/FE02.png</file>
-        <file>avatar_imgs/Primary/FE03.png</file>
-        <file>avatar_imgs/Primary/FE04.png</file>
-        <file>avatar_imgs/Primary/FE05.png</file>
-        <file>avatar_imgs/Primary/FG01.png</file>
-        <file>avatar_imgs/Primary/FG02.png</file>
-        <file>avatar_imgs/Primary/FG03.png</file>
-        <file>avatar_imgs/Primary/FG04.png</file>
-        <file>avatar_imgs/Primary/FG05.png</file>
-        <file>avatar_imgs/Primary/FH01.png</file>
-        <file>avatar_imgs/Primary/FH02.png</file>
-        <file>avatar_imgs/Primary/FH03.png</file>
-        <file>avatar_imgs/Primary/FH04.png</file>
-        <file>avatar_imgs/Primary/FH05.png</file>
-        <file>avatar_imgs/Primary/FI01.png</file>
-        <file>avatar_imgs/Primary/FI02.png</file>
-        <file>avatar_imgs/Primary/FI03.png</file>
-        <file>avatar_imgs/Primary/FI04.png</file>
-        <file>avatar_imgs/Primary/FI05.png</file>
-        <file>avatar_imgs/Primary/G01.png</file>
-        <file>avatar_imgs/Primary/G02.png</file>
-        <file>avatar_imgs/Primary/G03.png</file>
-        <file>avatar_imgs/Primary/G04.png</file>
-        <file>avatar_imgs/Primary/G05.png</file>
-        <file>avatar_imgs/Primary/H01.png</file>
-        <file>avatar_imgs/Primary/H02.png</file>
-        <file>avatar_imgs/Primary/H03.png</file>
-        <file>avatar_imgs/Primary/H04.png</file>
-        <file>avatar_imgs/Primary/H05.png</file>
-        <file>avatar_imgs/Primary/M01.png</file>
-        <file>avatar_imgs/Primary/M02.png</file>
-        <file>avatar_imgs/Primary/M03.png</file>
-        <file>avatar_imgs/Primary/M04.png</file>
-        <file>avatar_imgs/Primary/M05.png</file>
+        <file>avatar_imgs/Primary/1.png</file>
+        <file>avatar_imgs/Primary/2.png</file>
+        <file>avatar_imgs/Primary/3.png</file>
+        <file>avatar_imgs/Primary/4.png</file>
+        <file>avatar_imgs/Primary/5.png</file>
+        <file>avatar_imgs/Primary/6.png</file>
+        <file>avatar_imgs/Primary/7.png</file>
+        <file>avatar_imgs/Primary/8.png</file>
+        <file>avatar_imgs/Primary/9.png</file>
+        <file>avatar_imgs/Primary/10.png</file>
+        <file>avatar_imgs/Secondary/friends.png</file>
+        <file>avatar_imgs/Secondary/livre.png</file>
+        <file>avatar_imgs/Secondary/sport.png</file>
+        <file>avatar_imgs/Secondary/telephone.png</file>
+        <file>avatar_imgs/Secondary/not_selected.png</file>
     </qresource>
     <qresource prefix="/exercices">
         <file>exercises/ex1.png</file>
         <file>exercises/ex2.png</file>
         <file>exercises/ex3.png</file>
+        <file>exercises/clock.png</file>
     </qresource>
 </RCC>
