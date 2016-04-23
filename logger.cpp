@@ -4,6 +4,14 @@
 #include <QDateTime>
 Logger::Logger(QObject *parent) : QObject(parent)
 {
+    m_online_avatar_step="0";
+    m_selected_avatar="none";
+    m_exercise="none";
+    m_friend_enable="false";
+    m_sport_enable="false";
+    m_livre_enable="false";
+    m_telephone_enable="false";
+    m_exercise_completed="false";
 
 }
 
@@ -32,14 +40,24 @@ void Logger::init(){
         }
     QString log_file_name=QDateTime::currentDateTime().toString("dMyyhms");
     m_file.setFileName("logs/"+log_file_name+".csv");
+    m_file_questionnaire.setFileName("logs/"+log_file_name+"_questionnaire.csv");
     write_header();
+}
+
+void Logger::write_questionnaire(QString text){
+
+    m_file_questionnaire.open(QFile::WriteOnly | QFile::Append);
+    m_stream_questionnaire.setDevice(&m_file_questionnaire);
+    m_stream_questionnaire<<text;
+    m_file_questionnaire.close();
+
 }
 
 void Logger::write_header(){
     m_mutex.lock();
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
-    m_stream<<"Action;Condition;Time;Time_from_start;Exercise;Answer_Text;Selected_Avatar;N_Online_Avatars;Online_Avatars\n";
+    m_stream<<"Action;Condition;Time;Time_from_start_experiment;Online_Avatars_Progress;Selected_Avatar;Friends_Enable;Livre_Enable;Sport_Enable;Telephone_Enable;Exercise;Exercise_Completed;Answers\n";
     m_file.close();
     m_mutex.unlock();
 }
@@ -49,7 +67,7 @@ void Logger::write_read_instruction(QString condition){
     m_time.start();
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
-    m_stream<<"Reading_Instructions;"<<m_condition<<";0;;;;;;\n";
+    m_stream<<"Reading_Instructions;"<<m_condition<<";0;;;;;;;;;;\n";
     m_file.close();
     m_mutex.unlock();
 }
@@ -59,51 +77,67 @@ void Logger::write_start_experiment(){
     m_time_since_start.start();
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
-    m_stream<<"Start_experiment;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";0;;;;;\n";
+    m_stream<<"Start_experiment;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"<<m_online_avatar_step<<";;;;;;;;;\n";
     m_file.close();
     m_mutex.unlock();
 }
-void Logger::write_select_exercise(QString exercise){
+
+void Logger::write_select_exercise(QString exercise,bool exercise_completed,QString text){
     m_mutex.lock();
     m_exercise=exercise;
+    m_exercise_completed=exercise_completed? "true":"false";
+    m_answer=text;
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Select_exercise;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
-                                     <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_exercise<<";;;;\n";
+            <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_online_avatar_step<<";"
+            <<m_selected_avatar<<";"<<m_friend_enable<<";"<<m_livre_enable<<";"<<m_sport_enable<<";"
+            <<m_telephone_enable<<";"<<m_exercise<<";"<<m_exercise_completed<<";"<<m_answer<<"\n";
     m_file.close();
     m_mutex.unlock();
 
 }
 
-void Logger::write_exercise_answer(QString exercise, QString text){
+void Logger::write_exercise_answer(QString text,bool exercise_completed){
     m_mutex.lock();
+    m_answer=text;
+    m_exercise_completed=exercise_completed? "true":"false";
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Exercise_answer;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
-                                     <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<exercise<<
-                                       ";"<<text<<";;;\n";
+            <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_online_avatar_step<<";"
+            <<m_selected_avatar<<";"<<m_friend_enable<<";"<<m_livre_enable<<";"<<m_sport_enable<<";"
+            <<m_telephone_enable<<";"<<m_exercise<<";"<<m_exercise_completed<<";"<<m_answer<<"\n";
     m_file.close();
     m_mutex.unlock();
 }
 
-void Logger::write_select_avatar(QString avatarID){
+void Logger::write_select_avatar(QString avatarID,bool friend_enable,bool sport_enable,bool livre_enable,bool telephone_enable){
     m_mutex.lock();
+    m_selected_avatar=avatarID;
+    m_friend_enable= friend_enable? "true":"false";
+    m_sport_enable= sport_enable? "true":"false";
+    m_telephone_enable= telephone_enable? "true":"false";
+    m_livre_enable= livre_enable? "true":"false";
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Select_Avatar;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
-                                     <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_exercise<<
-                                       ";;"<<avatarID<<";;\n";
+            <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_online_avatar_step<<";"
+            <<m_selected_avatar<<";"<<m_friend_enable<<";"<<m_livre_enable<<";"<<m_sport_enable<<";"
+            <<m_telephone_enable<<";"<<m_exercise<<";"<<m_exercise_completed<<";"<<m_answer<<"\n";
     m_file.close();
     m_mutex.unlock();
 
 }
-void Logger::write_update_online_avatars(QString n, QString avatarsID){
+void Logger::write_update_online_avatars(QString n){
     m_mutex.lock();
+    m_online_avatar_step=n;
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Update_Online_Avatars;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
-                                     <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_exercise<<
-                                       ";;;"<<n<<";"<<avatarsID<<"\n";
+            <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_online_avatar_step<<";"
+            <<m_selected_avatar<<";"<<m_friend_enable<<";"<<m_livre_enable<<";"<<m_sport_enable<<";"
+            <<m_telephone_enable<<";"<<m_exercise<<";"<<m_exercise_completed<<";"<<m_answer<<"\n";
     m_file.close();
     m_mutex.unlock();
 }
@@ -113,8 +147,9 @@ void Logger::write_finish(){
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Finish;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
-                                     <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_exercise<<
-                                       ";;;;\n";
+            <<QString::number(m_time_since_start.elapsed()/1000)<<";"<<m_online_avatar_step<<";"
+            <<m_selected_avatar<<";"<<m_friend_enable<<";"<<m_livre_enable<<";"<<m_sport_enable<<";"
+            <<m_telephone_enable<<";"<<m_exercise<<";"<<m_exercise_completed<<";"<<m_answer<<"\n";
     m_file.close();
     m_mutex.unlock();
 }

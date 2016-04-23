@@ -35,6 +35,8 @@ Rectangle {
                 text: "WelCome\n Click to Start"
                 color:"white"
                 font.family: "Helvetica"
+                fontSizeMode: Text.Fit;
+                minimumPointSize: 12;
                 font.pointSize: 24
                 antialiasing: true
             }
@@ -101,6 +103,8 @@ Rectangle {
                 color: "white"
                 wrapMode: Text.WordWrap
                 font.family: "Helvetica"
+                fontSizeMode: Text.Fit;
+                minimumPointSize: 12;
                 font.pointSize: 24
                 Layout.alignment: Qt.AlignHCenter
                 antialiasing: true
@@ -140,7 +144,6 @@ Rectangle {
     }
 
 
-
     Rectangle{
         id:settings
         color: "#EE000000"
@@ -165,13 +168,13 @@ Rectangle {
                 ExclusiveGroup { id: conditionGroup }
                 RadioButton {
                     text: "Disable Avatar"
-                    checked: true
                     onCheckedChanged: if(checked) window.condition=0
                     enabled: pin.text=="0101"
                     exclusiveGroup: conditionGroup
                 }
                 RadioButton {
                     text: "Show Avatar with Faces"
+                    checked: true
                     onCheckedChanged: if(checked) window.condition=1
                     exclusiveGroup: conditionGroup
                     enabled: pin.text=="0101"

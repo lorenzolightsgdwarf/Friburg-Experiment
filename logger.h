@@ -20,20 +20,24 @@ public:
     Q_INVOKABLE void write_header();
     Q_INVOKABLE void write_read_instruction(QString condition);
     Q_INVOKABLE void write_start_experiment();
-    Q_INVOKABLE void write_select_exercise(QString exercise);
-    Q_INVOKABLE void write_exercise_answer(QString exercise, QString text);
-    Q_INVOKABLE void write_select_avatar(QString avatarID);
-    Q_INVOKABLE void write_update_online_avatars(QString n, QString avatarsID);
+    Q_INVOKABLE void write_select_exercise(QString exercise, bool exercise_completed,QString text);
+    Q_INVOKABLE void write_exercise_answer(QString text, bool exercise_completed);
+    Q_INVOKABLE void write_select_avatar(QString avatarID,bool friend_enable,bool sport_enable,bool livre_enable,bool telephone_enable);
+    Q_INVOKABLE void write_update_online_avatars(QString n);
     Q_INVOKABLE void write_finish();
+    Q_INVOKABLE void write_questionnaire(QString text);
 signals:
     void errorChanged();
 private:
-    QFile m_file;
-    QTextStream m_stream;
+    QFile m_file,m_file_questionnaire;
+    QTextStream m_stream,m_stream_questionnaire;
+
     QString m_error;
     QMutex m_mutex;
 
-    QString m_condition,m_exercise;
+    QString m_condition,m_exercise,m_online_avatar_step,
+            m_selected_avatar,m_friend_enable,m_livre_enable,m_sport_enable,
+            m_telephone_enable,m_answer,m_exercise_completed;
     QTime m_time;
     QTime m_time_since_start;
 };

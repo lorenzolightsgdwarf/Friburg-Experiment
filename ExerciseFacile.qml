@@ -2,9 +2,44 @@ import QtQuick 2.0
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
+import QtQuick.Dialogs 1.2
 
 Item{
     id:root
+
+    MessageDialog{
+        id:termine_dialog
+        visible:false;
+        icon: StandardIcon.Question
+        modality:Qt.ApplicationModal
+        standardButtons: StandardButton.Abort | StandardButton.Ok
+        title:"Exercice terminé"
+        text:"Es-tu sûr de vouloir te terminé l'exercice?<br>Vous ne pourrez modifier vos réponses"
+        onRejected:{visible=false}
+        onAccepted:{
+            exFacileState.complete=true;
+            pushState();
+            root.enabled=false;
+            visible=false}
+    }
+
+    function pullState(){
+        root.enabled=!exFacileState.complete
+        var i=0;
+        for(i=0;i<answers_repeter.count;i++){
+            answers_repeter.itemAt(i).text=exFacileState.answers[i];
+        }
+    }
+
+    function pushState(){
+        exFacileState.answers=[]
+        var i;
+        for(i=0;i<answers_repeter.count;i++){
+            exFacileState.answers.push(answers_repeter.itemAt(i).text);
+        }
+        exFacileState.writeState();
+    }
+
     ColumnLayout{
         anchors.fill: parent
         anchors.margins: 10
@@ -15,6 +50,8 @@ Item{
             wrapMode: Text.WordWrap
             font.family: "Helvetica"
             font.pointSize: 14
+            fontSizeMode: Text.Fit;
+            minimumPointSize: 12;
         }
         TextArea{
             id:text_area
@@ -23,6 +60,7 @@ Item{
             readOnly: true
             font.family: "Helvetica"
             font.pointSize: 12
+
             horizontalScrollBarPolicy:Qt.ScrollBarAlwaysOff
         }
         ScrollView{
@@ -38,6 +76,7 @@ Item{
                 Text { text: "Ex : le jour";Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter }
                 Text { text: "Ex : la nuit";Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter }
                 Repeater {
+                    id:answers_repeter
                     model:20
                     TextField{Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter}
                 }
@@ -60,8 +99,15 @@ Item{
                 font.family: "Helvetica"
                 font.pointSize: 16
                 font.bold: true
+                fontSizeMode: Text.Fit;
+                minimumPointSize: 12;
                 anchors.centerIn: parent
             }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: termine_dialog.visible=true;
+            }
+
         }
     }
 }

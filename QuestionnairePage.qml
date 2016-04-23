@@ -5,11 +5,118 @@ import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
+
 Rectangle{
-    visible:false
     id:final_questions
     anchors.fill: parent
     color:"#e3f2fd"
+
+    function checkMissingFields(){
+        if(!agegroup.current){
+            dialog.text="Remplissez le champ: <b>Age</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!sexgroup.current){
+            dialog.text="Remplissez le champ: <b>Sexe</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!francegroup.current || (francegroup.current.text=="Autre" && franceniveau_autre.text.length==0)){
+            dialog.text="Remplissez le champ: <b>Niveau en français</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!mathematiques.current || (mathematiques.current.text=="Autre" && mathematiquesniveau_autre.text.length==0)){
+            dialog.text="Remplissez le champ: <b>Niveau en mathématiques</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!allemand.current || (allemand.current.text=="Autre" && allemandniveau_autre.text.length==0)){
+            dialog.text="Remplissez le champ: <b>Niveau en allemand</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!sciences.current || (sciences.current.text=="Autre" && sciencesniveau_autre.text.length==0)){
+            dialog.text="Remplissez le champ: <b>Niveau en sciences</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!penses_france.current){
+            dialog.text="Remplissez le champ: <b>Que penses-tu du français?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!penses_mathematiques.current){
+            dialog.text="Remplissez le champ: <b>Que penses-tu du mathématiques?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!ordinateur.current){
+            dialog.text="Remplissez le champ: <b>A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!revenons_fractions.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de maths sur les fractions que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!revenons_horloge.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de maths au sujet de l’horloge que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!revenons_antonymes.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de français sur les antonymes que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(!revenons_lire.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de français sur les débuts de texte à lire que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+            dialog.visible=true
+             return false;
+        }
+        return true;
+
+    }
+
+    MessageDialog{
+        id:dialog
+        visible:false;
+        icon: StandardIcon.Question
+        modality:Qt.ApplicationModal
+        standardButtons: StandardButton.Ok
+        title:"Questionnaire"
+        text:"Remplissez le champ: "
+        onAccepted:{
+            visible=false
+        }
+    }
+    MessageDialog{
+        id:exit_dialog
+        visible:false;
+        modality:Qt.ApplicationModal
+        standardButtons: StandardButton.Ok
+        title:"Merci"
+        text:"Merci pour votre participation!"
+        onAccepted:{
+            Qt.quit()
+        }
+    }
+
     Rectangle{
         width: 3/4*parent.height
         height: parent.height-20
@@ -55,6 +162,8 @@ Rectangle{
                         text: "Age:"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
                     }
                     ExclusiveGroup { id: agegroup }
@@ -84,6 +193,8 @@ Rectangle{
                         text: "Sexe:"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
 
                     }
@@ -105,6 +216,8 @@ Rectangle{
                         text: "Niveau scolaire:"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
                     }
                     Column{
@@ -115,6 +228,8 @@ Rectangle{
                             text: "En français:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: francegroup }
@@ -132,6 +247,9 @@ Rectangle{
                                 text: "Autre"
                                 exclusiveGroup: francegroup
                                 TextField{
+                                    id:franceniveau_autre
+                                    enabled: parent.checked
+                                    text:""
                                     anchors.left: parent.right
                                     anchors.leftMargin: 5
                                 }
@@ -147,6 +265,8 @@ Rectangle{
 
                             text: "En mathématiques:"
                             font.italic: true
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             font.pointSize: 12
                             wrapMode: Text.WordWrap
                         }
@@ -166,6 +286,8 @@ Rectangle{
                                 text: "Autre"
                                 exclusiveGroup: mathematiques
                                 TextField{
+                                    enabled: parent.checked
+                                    id:mathematiquesniveau_autre
                                     anchors.left: parent.right
                                     anchors.leftMargin: 5
 
@@ -181,6 +303,8 @@ Rectangle{
                             Layout.maximumWidth: list_item.width-30
                             text: "En allemand:"
                             font.italic: true
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             font.pointSize: 12
                             wrapMode: Text.WordWrap
                         }
@@ -199,6 +323,8 @@ Rectangle{
                                 text: "Autre"
                                 exclusiveGroup: allemand
                                 TextField{
+                                    enabled: parent.checked
+                                    id:allemandniveau_autre
                                     anchors.left: parent.right
                                     anchors.leftMargin: 5
 
@@ -215,6 +341,8 @@ Rectangle{
                             text: "En sciences:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: sciences }
@@ -232,6 +360,8 @@ Rectangle{
                                 text: "Autre"
                                 exclusiveGroup: sciences
                                 TextField{
+                                    enabled: parent.checked
+                                    id:sciencesniveau_autre
                                     anchors.left: parent.right
                                     anchors.leftMargin: 5
 
@@ -245,6 +375,8 @@ Rectangle{
                         text: "Que penses-tu du français ?"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
                     }
                     ExclusiveGroup { id: penses_france }
@@ -273,6 +405,8 @@ Rectangle{
                         text: "Que penses-tu des mathématiques?"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
                     }
                     ExclusiveGroup { id: penses_mathematiques }
@@ -301,6 +435,8 @@ Rectangle{
                         text: "A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
 
                     }
@@ -309,6 +445,8 @@ Rectangle{
                         text:"Le chiffre 1 correspond à une fréquence de connexion minimale et le chiffre 10 correspond à une fréquence maximale."
                         font.italic: true
                         font.pointSize: 12
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
 
                     }
@@ -366,6 +504,8 @@ Rectangle{
                         text: "Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?"
                         font.bold: true
                         font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
                         wrapMode: Text.WordWrap
                     }
                     Column{
@@ -376,6 +516,8 @@ Rectangle{
                             text: "L’exercice de maths sur les fractions:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: revenons_fractions }
@@ -408,6 +550,8 @@ Rectangle{
                             text: "L’exercice de maths au sujet de l’horloge:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: revenons_horloge }
@@ -440,6 +584,8 @@ Rectangle{
                             text: "L’exercice de français sur les antonymes:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: revenons_antonymes }
@@ -472,6 +618,8 @@ Rectangle{
                             text: "L’exercice de français sur les débuts de texte à lire:"
                             font.italic: true
                             font.pointSize: 12
+                            fontSizeMode: Text.Fit;
+                            minimumPointSize: 12;
                             wrapMode: Text.WordWrap
                         }
                         ExclusiveGroup { id: revenons_lire }
@@ -498,35 +646,79 @@ Rectangle{
                 }
             }
         }
+
         Rectangle{
             id:questionnaire_done_button
-            anchors.right: parent.right
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.margins: 10
-            width: 75
-            color: "#00e676"
-            height: width
-            radius: width/2
+            color:"#00e676"
+            height: text_temine.height+10
+            width: text_temine.width+10
+            radius: 10
             layer.enabled: true
             layer.effect: DropShadow {
                 transparentBorder: true
             }
-            Image{
-                anchors.fill: parent
+            Text{
+                id:text_temine
+                text:"Questionnaire terminé"
+                font.family: "Helvetica"
+                font.pointSize: 16
+                font.bold: true
+                fontSizeMode: Text.Fit;
+                minimumPointSize: 12;
                 anchors.centerIn: parent
-                source:"qrc:/done.png"
             }
             MouseArea{
-                anchors.fill: parent;
+                anchors.fill: parent
                 onPressed: parent.layer.enabled=false
                 onReleased: parent.layer.enabled=true
                 onClicked: {
-                    messageBox.title="Finished"
-                    messageBox.text="Thanks for your participation"
-                    messageBox.visible=true
+                    if(checkMissingFields()){
+                        var tmp="";
+                        tmp=tmp.concat("Age;",agegroup.current.text,"\n")
+                        tmp=tmp.concat("Sexe;",sexgroup.current.text,"\n")
+                        tmp=tmp.concat("Niveau scolaire en français ;",francegroup.current.text)
+                        if(francegroup.current.text=="Autre")
+                            tmp=tmp.concat(";",franceniveau_autre.text,"\n");
+                        else
+                            tmp=tmp.concat("\n");
+
+                        tmp=tmp.concat("Niveau scolaire en mathématiques ;",mathematiques.current.text)
+                        if(mathematiques.current.text=="Autre")
+                            tmp=tmp.concat(";",mathematiquesniveau_autre.text,"\n");
+                        else
+                            tmp=tmp.concat("\n");
+
+                        tmp=tmp.concat("Niveau scolaire en allemand ;",allemand.current.text)
+                        if(allemand.current.text=="Autre")
+                            tmp=tmp.concat(";",allemandniveau_autre.text,"\n");
+                        else
+                            tmp=tmp.concat("\n");
+
+                        tmp=tmp.concat("Niveau scolaire en sciences ;",sciences.current.text)
+                        if(sciences.current.text=="Autre")
+                            tmp=tmp.concat(";",sciencesniveau_autre.text,"\n");
+                        else
+                            tmp=tmp.concat("\n");
+
+                        tmp=tmp.concat("Que penses-tu du français?;",penses_france.current.text,"\n")
+                        tmp=tmp.concat("Que penses-tu des mathématiques?;",penses_mathematiques.current.text,"\n")
+                        tmp=tmp.concat("A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?;",
+                                       ordinateur.current.text,"\n")
+                        tmp=tmp.concat("Revenons aux L’exercice de maths sur les fractions que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_fractions.current.text,"\n")
+                        tmp=tmp.concat("Revenons aux l'exercice de maths au sujet de l’horloge que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_horloge.current.text,"\n")
+                        tmp=tmp.concat("Revenons aux l'exercice de français sur les antonymes que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_antonymes.current.text,"\n")
+                        tmp=tmp.concat("Revenons aux l'exercice de français sur les débuts de texte à lire que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_lire.current.text,"\n")
+                        logger.write_questionnaire(tmp);
+                        exit_dialog.visible=true;
+                    }
                 }
             }
+
         }
+
     }
 
 
