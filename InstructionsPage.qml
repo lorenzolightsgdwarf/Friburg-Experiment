@@ -15,7 +15,7 @@ Rectangle {
     Rectangle{
         id:welcome
         color:"#2196f3"
-        width: 2/3*parent.width
+        width: Math.min(parent.width,height)
         height: parent.height-20
         anchors.centerIn: parent
         anchors.margins: 10
@@ -24,16 +24,14 @@ Rectangle {
             transparentBorder: true
         }
         Rectangle{
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top:parent.top
+            anchors.fill: parent
             anchors.margins: 10
             color:"#2962ff"
-            width:  2/3*parent.width
-            height: Math.min(16/9*width,parent.height-20)
             Text {
                 anchors.centerIn: parent
-                text: "WelCome\n Click to Start"
+                text: "Bienvenue!<br>Cliquer pour commencer"
                 color:"white"
+                horizontalAlignment:Text.AlignHCenter
                 font.family: "Helvetica"
                 fontSizeMode: Text.Fit;
                 minimumPointSize: 12;
@@ -68,6 +66,7 @@ Rectangle {
                 layer.enabled: true
                 layer.effect: DropShadow {
                     transparentBorder: true
+                    verticalOffset: 2
                 }
                 MouseArea{
                     anchors.fill: parent;
@@ -81,8 +80,8 @@ Rectangle {
     Rectangle{
         id:instruction
         visible: false
-        color:"#2962ff"
-        width: 2/3*parent.width
+        color:"#2196f3"
+        width: Math.min(parent.width,height)
         height: parent.height-20
         anchors.centerIn: parent
         anchors.margins: 10
@@ -90,52 +89,58 @@ Rectangle {
         layer.effect: DropShadow {
             transparentBorder: true
         }
-        ColumnLayout{
-            id:instruction_zone
-            spacing: 10
+        Rectangle{
             anchors.fill: parent
-            anchors.margins: 20
-            Text{
-                id:title
-                text:"<b><center>Consignes</center></b><br><ul><li>Réalise les 4 exercices proposés, dans l’ordre qui te convient. Les exercices sont de difficulté variable (de <i>très facile</i> à <i>très difficile</i>)</li>
+            anchors.margins: 10
+            color:"#2962ff"
+            ColumnLayout{
+                id:instruction_zone
+                spacing: 10
+                anchors.fill: parent
+                anchors.margins: 20
+                Text{
+                    id:title
+                    text:"<b><center>Consignes</center></b><br><ul><li>Réalise les 4 exercices proposés, dans l’ordre qui te convient. Les exercices sont de difficulté variable (de <i>très facile</i> à <i>très difficile</i>)</li>
 <br><li>Choisis un avatar dans la galerie de portraits qui t’est proposée. Tu es libre de faire ceci quand tu veux.</li>
 <br><li>Lorsque tu auras terminé les exercices et choisi ton avatar, clique sur le bouton <i>Déconnexion</i>.</li></ul>"
-                color: "white"
-                wrapMode: Text.WordWrap
-                font.family: "Helvetica"
-                fontSizeMode: Text.Fit;
-                minimumPointSize: 12;
-                font.pointSize: 24
-                Layout.alignment: Qt.AlignHCenter
-                antialiasing: true
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-            }
-            Item{
-                Layout.preferredHeight: 150
-                Layout.fillWidth: true
-                Rectangle{
-                    anchors.centerIn:  parent
-                    anchors.margins: 10
-                    width: 100
-                    color:"#00e676"
-                    height: width
-                    radius: width/2
-                    layer.enabled: true
-                    layer.effect: DropShadow {
-                        transparentBorder: true
-                    }
-                    Image {
-                        source: "qrc:/Button-Next.png"
-                        anchors.fill: parent
-                    }
-                    MouseArea{
-                        anchors.fill: parent;
-                        onPressed: parent.layer.enabled=false
-                        onReleased: parent.layer.enabled=true
-                        onClicked: {
-                            logger.write_start_experiment()
-                            window.page=1
+                    color: "white"
+                    wrapMode: Text.WordWrap
+                    font.family: "Helvetica"
+                    fontSizeMode: Text.Fit;
+                    minimumPointSize: 12;
+                    font.pointSize: 24
+                    Layout.alignment: Qt.AlignHCenter
+                    antialiasing: true
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                }
+                Item{
+                    Layout.preferredHeight: 150
+                    Layout.fillWidth: true
+                    Rectangle{
+                        anchors.centerIn:  parent
+                        anchors.margins: 10
+                        width: 100
+                        color:"#00e676"
+                        height: width
+                        radius: width/2
+                        layer.enabled: true
+                        layer.effect: DropShadow {
+                            transparentBorder: true
+                            verticalOffset: 2
+                        }
+                        Image {
+                            source: "qrc:/Button-Next.png"
+                            anchors.fill: parent
+                        }
+                        MouseArea{
+                            anchors.fill: parent;
+                            onPressed: parent.layer.enabled=false
+                            onReleased: parent.layer.enabled=true
+                            onClicked: {
+                                logger.write_start_experiment()
+                                window.page=1
+                            }
                         }
                     }
                 }

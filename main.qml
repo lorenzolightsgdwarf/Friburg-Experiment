@@ -17,7 +17,7 @@ Window {
     color: "#e3f2fd"
 
     property int condition:1
-    property bool started: false   
+    property bool exitFlag: false
 
     property int page:0
     onPageChanged: {
@@ -30,6 +30,7 @@ Window {
         }
 
     }
+
 
     Component.onCompleted: logger.init();
 
@@ -60,4 +61,25 @@ Window {
 
     }
 
+    MessageDialog {
+        id: exit_message
+        visible: false
+        title: "Quitter"
+        text: "êtes-vous sûr de vouloir quitter?"
+        onYes: {
+            exitFlag=true
+            Qt.quit();
+        }
+        onNo:{
+            visible=false
+        }
+        standardButtons: StandardButton.Yes| StandardButton.No
+    }
+
+    onClosing: {
+        if(!exitFlag){
+            close.accepted = false;
+            exit_message.visible=true;
+        }
+    }
 }

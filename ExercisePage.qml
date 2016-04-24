@@ -47,8 +47,8 @@ Item {
     Timer{
         id:online_avatars_update_timer
         property int nextAvatar:0
-        interval: nextAvatar==0 ? 10*online_avatars.get(nextAvatar).arrivalTime :
-                                  10*online_avatars.get(nextAvatar).arrivalTime - online_avatars.get(nextAvatar-1).arrivalTime
+        interval: nextAvatar==0 ? 1000*online_avatars.get(nextAvatar).arrivalTime :
+                                  1000*(online_avatars.get(nextAvatar).arrivalTime - online_avatars.get(nextAvatar-1).arrivalTime)
         running:window.condition>0
         onTriggered: {
             nextAvatar++
@@ -66,7 +66,7 @@ Item {
         color: "transparent"
         border.color: "black"
         border.width: 1
-        width: Math.min(online_avatars_update_timer.nextAvatar*(height+5),0.8*parent.width)
+        width: Math.min(online_avatars_update_timer.nextAvatar*(height+2),0.8*parent.width)
         height: 0.16*parent.height
         anchors.bottom: ex_placeHolder.top
         anchors.left: parent.left

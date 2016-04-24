@@ -17,6 +17,8 @@
         <file>ExTresFacileState.qml</file>
         <file>ExDifficileState.qml</file>
         <file>ExTresDifficileState.qml</file>
+        <file>icon.ico</file>
+        <file>icon.png</file>
     </qresource>
     <qresource prefix="/avatars">
         <file>avatar_imgs/Primary/1.png</file>

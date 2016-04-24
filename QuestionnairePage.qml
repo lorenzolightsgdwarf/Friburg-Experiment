@@ -113,18 +113,20 @@ Rectangle{
         title:"Merci"
         text:"Merci pour votre participation!"
         onAccepted:{
+            exitFlag=true
             Qt.quit()
         }
     }
 
     Rectangle{
-        width: 3/4*parent.height
+        width:  Math.min(parent.height,parent.width)
         height: parent.height-20
         anchors.centerIn: parent
         anchors.margins: 10
         layer.enabled: true
         layer.effect: DropShadow {
             transparentBorder: true
+
         }
         Rectangle{
             id:questionnaire_title
@@ -149,6 +151,7 @@ Rectangle{
             anchors.bottom: questionnaire_done_button.top
             anchors.topMargin: 20
             anchors.leftMargin: 20
+            anchors.bottomMargin: 10
             ScrollView{
                 anchors.fill: parent
                 horizontalScrollBarPolicy:Qt.ScrollBarAlwaysOff

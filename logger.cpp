@@ -33,14 +33,18 @@ void Logger::setError(QString e)
 }
 void Logger::init(){
     QDir localDir;
-    if(!localDir.exists("logs"))
-        if(!localDir.mkdir("logs")){
+    QString extstr="";
+    #if ANDROID
+        extstr=QString(getenv("EXTERNAL_STORAGE"))+"/friburg-experiment/";
+    #endif
+    if(!localDir.exists(extstr+"logs"))
+        if(!localDir.mkpath(extstr+"logs")){
             setError("Cannot create directory of the logs. Move the executable in another folder.");
             return;
         }
     QString log_file_name=QDateTime::currentDateTime().toString("dMyyhms");
-    m_file.setFileName("logs/"+log_file_name+".csv");
-    m_file_questionnaire.setFileName("logs/"+log_file_name+"_questionnaire.csv");
+    m_file.setFileName(extstr+"logs/"+log_file_name+".csv");
+    m_file_questionnaire.setFileName(extstr+"logs/"+log_file_name+"_questionnaire.csv");
     write_header();
 }
 
