@@ -19,6 +19,7 @@
         <file>ExTresDifficileState.qml</file>
         <file>icon.ico</file>
         <file>icon.png</file>
+        <file>ScrollBar.qml</file>
     </qresource>
     <qresource prefix="/avatars">
         <file>avatar_imgs/Primary/1.png</file>
@@ -36,6 +37,7 @@
         <file>avatar_imgs/Secondary/sport.png</file>
         <file>avatar_imgs/Secondary/telephone.png</file>
         <file>avatar_imgs/Secondary/not_selected.png</file>
+        <file>avatar_imgs/Primary/0.png</file>
     </qresource>
     <qresource prefix="/exercices">
         <file>exercises/ex1.png</file>

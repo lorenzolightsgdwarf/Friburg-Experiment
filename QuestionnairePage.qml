@@ -66,29 +66,107 @@ Rectangle{
              return false;
 
         }
-        if(!revenons_fractions.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de maths sur les fractions que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+
+        if(window.condition==2 && !plaisir_historie.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
-        if(!revenons_horloge.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de maths au sujet de l’horloge que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+        if(window.condition==2 &&!plaisir_verbes.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
-        if(!revenons_antonymes.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de français sur les antonymes que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+        if(window.condition==2 &&!plaisir_romans.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
-        if(!revenons_lire.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux l’exercice de français sur les débuts de texte à lire que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?</b>"
+        if(window.condition==2 &&!plaisir_intrus.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
         }
+
+        if(window.condition==2 && !difficulte_historie.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==2 &&!difficulte_verbes.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==2 &&!difficulte_romans.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==2 &&!difficulte_intrus.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+        }
+
+
+        /*Math*/
+        if(window.condition==1 && !plaisir_matrice.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!plaisir_horloge.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!plaisir_courses.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!plaisir_fraction.current){
+            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.visible=true
+             return false;
+        }
+
+        if(window.condition==1 && !difficulte_matrice.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!difficulte_horloge.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!difficulte_courses.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+
+        }
+        if(window.condition==1 &&!difficulte_fraction.current){
+            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.visible=true
+             return false;
+        }
+
+
+
         return true;
 
     }
@@ -159,6 +237,724 @@ Rectangle{
                     width: list_item.width
                     anchors.margins: 20
                     spacing: 10
+                    /*French questions*/
+                    Label{
+                        visible: window.condition==2
+                        Layout.maximumWidth: list_item.width-30
+                        text: "Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de <b>plaisir</b> et <b>d’ennui</b> ?"
+                        font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
+                        wrapMode: Text.WordWrap
+                    }
+                    GridLayout {
+                        visible: window.condition==2
+                        Layout.maximumWidth: list_item.width-30
+                        rows: 6
+                        columns: 5
+                        ExclusiveGroup { id: plaisir_historie }
+                        ExclusiveGroup { id: plaisir_verbes }
+                        ExclusiveGroup { id: plaisir_romans }
+                        ExclusiveGroup { id: plaisir_intrus }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Ecris la fin de l’histoire</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Conjugue les verbes</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Lis les débuts de romans</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Trouve l’intrus</i>"
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"J’ai trouvé cet exercice…"
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10}
+
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très plaisant"
+                        }
+                        RadioButton{
+                            property string response: "très plaisant"
+                            exclusiveGroup: plaisir_historie
+                        }
+                        RadioButton{
+                            property string response: "très plaisant"
+
+                            exclusiveGroup: plaisir_verbes
+                        }
+                        RadioButton{
+                            property string response: "très plaisant"
+
+                            exclusiveGroup: plaisir_romans
+                        }
+                        RadioButton{
+                            property string response: "très plaisant"
+
+                            exclusiveGroup: plaisir_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…plaisant"
+                        }
+                        RadioButton{
+                            property string response: "plaisant"
+
+                            exclusiveGroup: plaisir_historie
+                        }
+                        RadioButton{
+                            property string response: "plaisant"
+
+                            exclusiveGroup: plaisir_verbes
+                        }
+                        RadioButton{
+                            property string response: "plaisant"
+
+                            exclusiveGroup: plaisir_romans
+                        }
+                        RadioButton{
+                            property string response: "plaisant"
+
+                            exclusiveGroup: plaisir_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…ennuyeux"
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_historie
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_verbes
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_romans
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très ennuyeux"
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_historie
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_verbes
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_romans
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_intrus
+                        }
+
+                    }
+                    Rectangle{
+                        visible: window.condition==2
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
+                    Label{
+                        visible: window.condition==2
+                        Layout.maximumWidth: list_item.width-30
+                        text: "Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de <b>difficulté</b> ?"
+                        font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
+                        wrapMode: Text.WordWrap
+                    }
+                    GridLayout {
+                        visible: window.condition==2
+                        Layout.maximumWidth: list_item.width-30
+                        rows: 6
+                        columns: 5
+                        ExclusiveGroup { id: difficulte_historie }
+                        ExclusiveGroup { id: difficulte_verbes }
+                        ExclusiveGroup { id: difficulte_romans }
+                        ExclusiveGroup { id: difficulte_intrus }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Ecris la fin de l’histoire</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Conjugue les verbes</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Lis les débuts de romans</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Trouve l’intrus</i>"
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"J’ai trouvé cet exercice…"
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10}
+
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très facile"
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_historie
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_verbes
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_romans
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…facile"
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_historie
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_verbes
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_romans
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…difficile"
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_historie
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_verbes
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_romans
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_intrus
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très difficile"
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_historie
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_verbes
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_romans
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_intrus
+                        }
+
+                    }
+                    Rectangle{
+                        visible: window.condition==2
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
+                    /*Maths questions*/
+                    Label{
+                        visible: window.condition==1
+                        Layout.maximumWidth: list_item.width-30
+                        text: "Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de <b>plaisir</b> et <b>d’ennui</b> ?"
+                        font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
+                        wrapMode: Text.WordWrap
+                    }
+                    GridLayout {
+                        visible: window.condition==1
+                        Layout.maximumWidth: list_item.width-30
+                        rows: 6
+                        columns: 5
+                        ExclusiveGroup { id: plaisir_matrice }
+                        ExclusiveGroup { id: plaisir_horloge }
+                        ExclusiveGroup { id: plaisir_courses }
+                        ExclusiveGroup { id: plaisir_fraction }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Label{
+                            Layout.fillWidth: true
+                            wrapMode: Text.WordWrap
+                            text:"Exercice<br><i>Place les nombres dans la matrice </i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Résous le problème avec l’horloge</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Calcule le prix à payer pour les courses</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Indique la fraction coloriée</i>"
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"J’ai trouvé cet exercice…"
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10}
+
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très plaisant"
+                        }
+                        RadioButton{
+                            property string response:"très plaisant"
+
+                            exclusiveGroup: plaisir_matrice
+                        }
+                        RadioButton{
+                            property string response:"très plaisant"
+
+                            exclusiveGroup: plaisir_horloge
+                        }
+                        RadioButton{
+                            property string response:"très plaisant"
+
+                            exclusiveGroup: plaisir_courses
+                        }
+                        RadioButton{
+                            property string response:"très plaisant"
+
+                            exclusiveGroup: plaisir_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…plaisant"
+                        }
+                        RadioButton{
+                            property string response:"plaisant"
+
+                            exclusiveGroup: plaisir_matrice
+                        }
+                        RadioButton{
+                            property string response:"plaisant"
+
+                            exclusiveGroup: plaisir_horloge
+                        }
+                        RadioButton{
+                            property string response:"plaisant"
+
+                            exclusiveGroup: plaisir_courses
+                        }
+                        RadioButton{
+                            property string response:"plaisant"
+
+                            exclusiveGroup: plaisir_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…ennuyeux"
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_matrice
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_horloge
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_courses
+                        }
+                        RadioButton{
+                            property string response:"ennuyeux"
+
+                            exclusiveGroup: plaisir_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très ennuyeux"
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_matrice
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_horloge
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_courses
+                        }
+                        RadioButton{
+                            property string response:"très ennuyeux"
+
+                            exclusiveGroup: plaisir_fraction
+                        }
+
+                    }
+                    Rectangle{
+                        visible: window.condition==1
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
+                    Label{
+                        visible: window.condition==1
+                        Layout.maximumWidth: list_item.width-30
+                        text: "Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de <b>difficulté</b> ?"
+                        font.pointSize: 14
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
+                        wrapMode: Text.WordWrap
+                    }
+                    GridLayout {
+                        visible: window.condition==1
+                        Layout.maximumWidth: list_item.width-30
+                        rows: 6
+                        columns: 5
+                        ExclusiveGroup { id: difficulte_matrice }
+                        ExclusiveGroup { id: difficulte_horloge }
+                        ExclusiveGroup { id: difficulte_courses }
+                        ExclusiveGroup { id: difficulte_fraction }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Place les nombres dans la matrice </i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Résous le problème avec l’horloge</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Calcule le prix à payer pour les courses</i>"
+                        }
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"Exercice<br><i>Indique la fraction coloriée</i>"
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"J’ai trouvé cet exercice…"
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10}
+
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+                        Rectangle{
+                            width: 10
+                            height: 10
+                        }
+
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très facile"
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_matrice
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_horloge
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_courses
+                        }
+                        RadioButton{
+                            property string response:"très facile"
+
+                            exclusiveGroup: difficulte_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…facile"
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_matrice
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_horloge
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_courses
+                        }
+                        RadioButton{
+                            property string response:"facile"
+
+                            exclusiveGroup: difficulte_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…difficile"
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_matrice
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_horloge
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_courses
+                        }
+                        RadioButton{
+                            property string response:"difficile"
+
+                            exclusiveGroup: difficulte_fraction
+                        }
+                        /*---------*/
+                        Label{
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            text:"…très difficile"
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_matrice
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_horloge
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_courses
+                        }
+                        RadioButton{
+                            property string response:"très difficile"
+
+                            exclusiveGroup: difficulte_fraction
+                        }
+
+                    }
+
+                    Rectangle{
+                        visible: window.condition==1
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
                     /*-----Age-----*/
                     Label{
                         Layout.maximumWidth: list_item.width-30
@@ -190,7 +986,13 @@ Rectangle{
                         }
                     }
                     /*-------*/
+                    Rectangle{
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
 
+                    }
                     Label{
                         Layout.maximumWidth: list_item.width-30
                         text: "Sexe:"
@@ -213,7 +1015,15 @@ Rectangle{
                             exclusiveGroup: sexgroup
                         }
                     }
+                    Rectangle{
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
                     /*-------*/
+
                     Label{
                         Layout.maximumWidth: list_item.width-30
                         text: "Niveau scolaire:"
@@ -259,7 +1069,7 @@ Rectangle{
                             }
                         }
                     }
-                    /*-------*/
+                    /*-------*/                    
                     Column{
                         leftPadding: 10
                         spacing: 10
@@ -373,6 +1183,13 @@ Rectangle{
                         }
                     }
                     /*-------*/
+                    Rectangle{
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
                     Label{
                         Layout.maximumWidth: list_item.width-30
                         text: "Que penses-tu du français ?"
@@ -403,6 +1220,13 @@ Rectangle{
                         }
                     }
                     /*-------*/
+                    Rectangle{
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
                     Label{
                         Layout.maximumWidth: list_item.width-30
                         text: "Que penses-tu des mathématiques?"
@@ -433,6 +1257,13 @@ Rectangle{
                         }
                     }
                     /*-------*/
+                    Rectangle{
+                        Layout.preferredHeight: 5
+                        Layout.preferredWidth: list_item.width-30
+                        color: "black"
+                        radius: 2
+
+                    }
                     Label{
                         Layout.maximumWidth: list_item.width-30
                         text: "A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?"
@@ -502,150 +1333,6 @@ Rectangle{
                             exclusiveGroup: ordinateur
                         }
                     }
-                    Label{
-                        Layout.maximumWidth: list_item.width-30
-                        text: "Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?"
-                        font.bold: true
-                        font.pointSize: 14
-                        fontSizeMode: Text.Fit;
-                        minimumPointSize: 12;
-                        wrapMode: Text.WordWrap
-                    }
-                    Column{
-                        leftPadding: 10
-                        spacing: 10
-                        Label{
-                            Layout.maximumWidth: list_item.width-30
-                            text: "L’exercice de maths sur les fractions:"
-                            font.italic: true
-                            font.pointSize: 12
-                            fontSizeMode: Text.Fit;
-                            minimumPointSize: 12;
-                            wrapMode: Text.WordWrap
-                        }
-                        ExclusiveGroup { id: revenons_fractions }
-                        Column{
-                            leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_fractions
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_fractions
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_fractions
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_fractions
-                            }
-                        }
-                    }
-                    /*------*/
-                    Column{
-                        leftPadding: 10
-                        spacing: 10
-                        Label{
-                            Layout.maximumWidth: list_item.width-30
-                            text: "L’exercice de maths au sujet de l’horloge:"
-                            font.italic: true
-                            font.pointSize: 12
-                            fontSizeMode: Text.Fit;
-                            minimumPointSize: 12;
-                            wrapMode: Text.WordWrap
-                        }
-                        ExclusiveGroup { id: revenons_horloge }
-                        Column{
-                            leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_horloge
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_horloge
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_horloge
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_horloge
-                            }
-                        }
-                    }
-                    /*------*/
-                    Column{
-                        leftPadding: 10
-                        spacing: 10
-                        Label{
-                            Layout.maximumWidth: list_item.width-30
-                            text: "L’exercice de français sur les antonymes:"
-                            font.italic: true
-                            font.pointSize: 12
-                            fontSizeMode: Text.Fit;
-                            minimumPointSize: 12;
-                            wrapMode: Text.WordWrap
-                        }
-                        ExclusiveGroup { id: revenons_antonymes }
-                        Column{
-                            leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_antonymes
-                            }
-                        }
-                    }
-                    /*------*/
-                    Column{
-                        leftPadding: 10
-                        spacing: 10
-                        Label{
-                            Layout.maximumWidth: list_item.width-30
-                            text: "L’exercice de français sur les débuts de texte à lire:"
-                            font.italic: true
-                            font.pointSize: 12
-                            fontSizeMode: Text.Fit;
-                            minimumPointSize: 12;
-                            wrapMode: Text.WordWrap
-                        }
-                        ExclusiveGroup { id: revenons_lire }
-                        Column{
-                            leftPadding: 10
-                            RadioButton {
-                                text: "je l’ai trouvé très plaisant"
-                                exclusiveGroup: revenons_lire
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé plaisant"
-                                exclusiveGroup: revenons_lire
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé ennuyeux"
-                                exclusiveGroup: revenons_lire
-                            }
-                            RadioButton {
-                                text: "je l’ai trouvé très ennuyeux"
-                                exclusiveGroup: revenons_lire
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -680,6 +1367,31 @@ Rectangle{
                 onClicked: {
                     if(checkMissingFields()){
                         var tmp="";
+                        if(window.condition==1){
+                            tmp=tmp.concat("Maths_plaisir_ex_matrice;",plaisir_matrice.current.response,"\n")
+                            tmp=tmp.concat("Maths_plaisir_ex_horloge;",plaisir_horloge.current.response,"\n")
+                            tmp=tmp.concat("Maths_plaisir_ex_pris_courses;",plaisir_courses.current.response,"\n")
+                            tmp=tmp.concat("Maths_plaisir_ex_fraction;",plaisir_fraction.current.response,"\n")
+
+                            tmp=tmp.concat("Maths_difficulte_ex_matrice;",difficulte_matrice.current.response,"\n")
+                            tmp=tmp.concat("Maths_difficulte_ex_horloge;",difficulte_horloge.current.response,"\n")
+                            tmp=tmp.concat("Maths_difficulte_ex_pris_courses;",difficulte_courses.current.response,"\n")
+                            tmp=tmp.concat("Maths_difficulte_ex_fraction;",difficulte_fraction.current.response,"\n")
+
+                        }
+                        else if(window.condtion==2){
+                            tmp=tmp.concat("French_plaisir_ex_historie;",plaisir_historie.current.response,"\n")
+                            tmp=tmp.concat("French_plaisir_ex_verbes;",plaisir_verbes.current.response,"\n")
+                            tmp=tmp.concat("French_plaisir_ex_romans;",plaisir_romans.current.response,"\n")
+                            tmp=tmp.concat("French_plaisir_ex_intrus;",plaisir_intrus.current.response,"\n")
+
+                            tmp=tmp.concat("French_difficulte_ex_historie;",difficulte_historie.current.response,"\n")
+                            tmp=tmp.concat("French_difficulte_ex_verbes;",difficulte_verbes.current.response,"\n")
+                            tmp=tmp.concat("French_difficulte_ex_romans;",difficulte_romans.current.response,"\n")
+                            tmp=tmp.concat("French_difficulte_ex_intrus;",difficulte_intrus.current.response,"\n")
+
+
+                        }
                         tmp=tmp.concat("Age;",agegroup.current.text,"\n")
                         tmp=tmp.concat("Sexe;",sexgroup.current.text,"\n")
                         tmp=tmp.concat("Niveau scolaire en français ;",francegroup.current.text)
@@ -710,10 +1422,6 @@ Rectangle{
                         tmp=tmp.concat("Que penses-tu des mathématiques?;",penses_mathematiques.current.text,"\n")
                         tmp=tmp.concat("A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?;",
                                        ordinateur.current.text,"\n")
-                        tmp=tmp.concat("Revenons aux L’exercice de maths sur les fractions que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_fractions.current.text,"\n")
-                        tmp=tmp.concat("Revenons aux l'exercice de maths au sujet de l’horloge que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_horloge.current.text,"\n")
-                        tmp=tmp.concat("Revenons aux l'exercice de français sur les antonymes que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_antonymes.current.text,"\n")
-                        tmp=tmp.concat("Revenons aux l'exercice de français sur les débuts de texte à lire que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant?;",revenons_lire.current.text,"\n")
                         logger.write_questionnaire(tmp);
                         exit_dialog.visible=true;
                     }

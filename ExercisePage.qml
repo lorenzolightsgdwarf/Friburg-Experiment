@@ -43,30 +43,79 @@ Item {
     AvatarBannerListModel{
         id:online_avatars
     }
+    ListModel{
+        id:current_online_avatars
+    }
+
+    Component.onCompleted: {
+        online_avatars_update_timer.getNextArrivalTime()
+        online_avatars_update_timer.start();
+    }
 
     Timer{
         id:online_avatars_update_timer
-        property int nextAvatar:0
-        interval: nextAvatar==0 ? 1000*online_avatars.get(nextAvatar).arrivalTime :
-                                  1000*(online_avatars.get(nextAvatar).arrivalTime - online_avatars.get(nextAvatar-1).arrivalTime)
-        running:window.condition>0
+        property real last_value:0
+        property real current_value: 0
+
+        running:false;
+
         onTriggered: {
-            nextAvatar++
-            logger.write_update_online_avatars(nextAvatar.toString());
-            online_avatars.setProperty(nextAvatar-1,"activated",true)
-            if(nextAvatar<online_avatars.count)
-                start()
+            updateModel();
+            last_value=current_value;
+            getNextArrivalTime();
+            interval=1000*(current_value-last_value)
+            logger.write_update_online_avatars("Online avatar updated");
+            if(current_value!=99999999)
+                start();
+        }
+        function getNextArrivalTime(){
+            var i=0;
+            var min=99999999;
+            for(i=0;i<online_avatars.count;i++){
+                if(online_avatars.get(i).arrivalTime>last_value && online_avatars.get(i).arrivalTime<min){
+                    min=online_avatars.get(i).arrivalTime;
+                }
+            }
+            current_value=min;
+        }
+        function updateModel(){
+            var i=0;
+            for(i=0;i<online_avatars.count;i++){
+                if(current_value==online_avatars.get(i).arrivalTime){
+                    if(!online_avatars.get(i).isUpdate){
+                        current_online_avatars.append(online_avatars.get(i))
+                    }
+                    else{
+                          current_online_avatars.set(online_avatars.get(i).avatarNumber-1,online_avatars.get(i))
+                    }
+                }
+            }
         }
     }
 
+    Text {
+        wrapMode: Text.WordWrap
+        text: "Les autres connectés:"
+        verticalAlignment:Text.AlignVCenter
+        horizontalAlignment:Text.AlignHCenter
+        font.family: "Helvetica"
+        font.pointSize: 14
+        fontSizeMode: Text.Fit;
+        minimumPointSize: 12;
+        anchors.bottom: people_placeHolder.top
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.bottomMargin: 2
 
+
+    }
     Rectangle{
         id:people_placeHolder
-        visible: window.condition>0
+        visible: true
         color: "transparent"
         border.color: "black"
         border.width: 1
-        width: Math.min(online_avatars_update_timer.nextAvatar*(height+2),0.8*parent.width)
+        width: Math.min(current_online_avatars.count*(height+2),0.8*parent.width)
         height: 0.16*parent.height
         anchors.bottom: ex_placeHolder.top
         anchors.left: parent.left
@@ -78,9 +127,9 @@ Item {
             clip:true
             interactive: false
             spacing: 2
-            model: online_avatars
+            model: current_online_avatars
             orientation:ListView.Horizontal
-            currentIndex: online_avatars_update_timer.nextAvatar-1
+            currentIndex: current_online_avatars.count-1
             delegate:Item{
                 width: people_placeHolder.height
                 height:width
@@ -93,7 +142,8 @@ Item {
                     mini_avatar_livre_enabled: livre
                     mini_avatar_sport_enabled: sport
                     mini_avatar_telephone_enabled: telephone
-                    visible:activated
+                    visible:true
+                    selectingAvatar: isSelecting
                     interactive: false
                     transparent:false
                     highlighted: false
@@ -107,7 +157,7 @@ Item {
         width: 0.8*parent.width
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0.1*parent.height
+        anchors.bottomMargin: 0.05*parent.height
         anchors.margins: 10
         Item {
             height: 0.1*parent.height
@@ -362,14 +412,30 @@ Item {
             onLoaded: item.pullState();
         }
     }
+    Text {
+        id:moi_connecte
+        wrapMode: Text.WordWrap
+        width: current_avatar.width-10
+        text: "Moi connecté:"
+        verticalAlignment:Text.AlignVCenter
+        horizontalAlignment:Text.AlignHCenter
+        font.family: "Helvetica"
+        font.pointSize: 14
+        fontSizeMode: Text.Fit;
+        minimumPointSize: 12;
+        anchors.bottom: current_avatar.top
+        anchors.horizontalCenter: current_avatar.horizontalCenter
+        anchors.bottomMargin: 2
+    }
     AvatarDelegate{
         id:current_avatar
         anchors.top:people_placeHolder.top
-        anchors.horizontalCenter: avatart_selection_item.horizontalCenter
+        anchors.right: parent.right
+        anchors.rightMargin: 10
         width: 0.15*parent.width
         height: 0.22*parent.height
-        anchors.margins: 10
-        main_avatar_source: ""
+        main_avatar_source: "qrc:/avatars/avatar_imgs/Primary/0.png"
+        name:"anonymous"
         onNameChanged: logger.write_select_avatar(name,mini_avatar_friends_enabled,mini_avatar_sport_enabled,
                                                   mini_avatar_livre_enabled,mini_avatar_telephone_enabled);
         onMini_avatar_friends_enabledChanged:  logger.write_select_avatar(name,mini_avatar_friends_enabled,mini_avatar_sport_enabled,
@@ -384,11 +450,12 @@ Item {
         highlighted: true
         interactive: false
     }
+
     Item{
         id:avatart_selection_item
-        height: 0.72*parent.height
-        width: 0.18*parent.width
-        anchors.left: ex_placeHolder.right
+        height: 0.70*parent.height
+        width: 0.13*parent.width
+        anchors.horizontalCenter: current_avatar.horizontalCenter
         anchors.top: current_avatar.bottom
         anchors.margins: 10
         Rectangle{
@@ -397,18 +464,11 @@ Item {
             width: parent.width
             height: 0.8*parent.height
             ColumnLayout{
-                anchors.fill: parent
+                width: parent.width-17;
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
                 anchors.margins: 5
-                Text {
-                    wrapMode: Text.WordWrap
-                    Layout.maximumWidth: parent.width-10
-                    text: "Choose your Avatar:"
-                    verticalAlignment:Text.AlignVCenter
-                    font.family: "Helvetica"
-                    font.pointSize: 20
-                    fontSizeMode: Text.Fit;
-                    minimumPointSize: 12;
-                }
                 ListView{
                     id:avatar_list_view
                     clip:true
@@ -454,6 +514,17 @@ Item {
 
                     }
                 }
+            }
+            ScrollBar {
+                id: verticalScrollBar
+                width: 12; height: parent.height-12
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 2
+                opacity: 1
+                orientation: Qt.Vertical
+                position: Math.max(Math.min(avatar_list_view.visibleArea.yPosition,1),0)
+                pageSize: avatar_list_view.visibleArea.heightRatio
             }
         }
         Rectangle{

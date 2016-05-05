@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 ListModel {
+
     ListElement {
         avatar_name: "#1"
         img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"

@@ -43,15 +43,16 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     if(window.condition==0)
-                        logger.write_read_instruction("Avatar_Online_Disabled")
+                        logger.write_read_instruction("")
                     else if(window.condition==1)
-                        logger.write_read_instruction("Avatar_Online_Enabled_Faces")
+                        logger.write_read_instruction("Maths")
                     else if(window.condition==2)
-                        logger.write_read_instruction("Avatar_Online_Enabled_Neutral")
+                        logger.write_read_instruction("French")
                     welcome.visible=false;
                     instruction.visible=true}
             }
             Rectangle{
+                visible: false
                 color:"#00e676"
                 anchors.bottom: parent.bottom
                 anchors.right: parent.right
@@ -100,9 +101,8 @@ Rectangle {
                 anchors.margins: 20
                 Text{
                     id:title
-                    text:"<b><center>Consignes</center></b><br><ul><li>Réalise les 4 exercices proposés, dans l’ordre qui te convient. Les exercices sont de difficulté variable (de <i>très facile</i> à <i>très difficile</i>)</li>
-<br><li>Choisis un avatar dans la galerie de portraits qui t’est proposée. Tu es libre de faire ceci quand tu veux.</li>
-<br><li>Lorsque tu auras terminé les exercices et choisi ton avatar, clique sur le bouton <i>Déconnexion</i>.</li></ul>"
+                    text:"<b><center>Consignes</center></b><br><ul><li>Réalise les 4 exercices proposés, dans l’ordre qui te convient</li>
+<br><li>Lorsque tu auras terminé les exercices, clique sur le bouton <i>Déconnexion</i>.</li></ul>"
                     color: "white"
                     wrapMode: Text.WordWrap
                     font.family: "Helvetica"
