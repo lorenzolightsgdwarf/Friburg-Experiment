@@ -7,18 +7,20 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
 Item {
 
-    ExDifficileState{
-        id:exDifficileState
+    ExDifficileStateMath{
+        id:exDifficileStateMath
     }
-    ExFacileState{
-        id:exFacileState
+    ExFacileStateMath{
+        id:exFacileStateMath
     }
-    ExTresDifficileState{
-        id:exTresDifficileState
+    ExTresFacileStateMath{
+        id:exTresFacileStateMath
     }
-    ExTresFacileState{
-        id:exTresFacileState
+    ExTresDifficileStateMath{
+        id:exTresDifficileStateMath
     }
+
+
 
     MessageDialog{
         id:deconnexion_dialog
@@ -174,15 +176,15 @@ Item {
                         name: "tres_facile"
                         PropertyChanges {
                             target: tres_facile
-                            color: exTresFacileState.complete ? "#441976d2" :"#1976d2"
+                            color: exTresFacileStateMath.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
-                            source:"qrc:/ExerciseTresFacile.qml"
+                            source:"qrc:/ExerciseTresFacileMath.qml"
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("tres_facile",exTresFacileState.complete,exTresFacileState.answer_toString())
+                                logger.write_select_exercise("exercise_blu",exTresFacileStateMath.complete,exTresFacileStateMath.answer_toString())
                             }
                         }
                     },
@@ -190,15 +192,15 @@ Item {
                         name: "facile"
                         PropertyChanges {
                             target: facile
-                            color: exFacileState.complete ? "#441976d2" :"#1976d2"
+                            color: exFacileStateMath.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
-                            source:"qrc:/ExerciseFacile.qml"
+                            source:"qrc:/ExerciseFacileMath.qml"
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("facile",exFacileState.complete,exFacileState.answer_toString())
+                                logger.write_select_exercise("exercise_green",exFacileStateMath.complete,exFacileStateMath.answer_toString())
                             }
                         }
                     },
@@ -207,15 +209,15 @@ Item {
                         name: "difficile"
                         PropertyChanges {
                             target: difficile
-                            color: exDifficileState.complete ? "#441976d2" :"#1976d2"
+                            color: exDifficileStateMath.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
-                            source:"qrc:/ExerciseDifficile.qml"
+                            source:"qrc:/ExerciseDifficileMath.qml"
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("difficile",exDifficileState.complete,exDifficileState.answer_toString())
+                                logger.write_select_exercise("exercise_red",exDifficileStateMath.complete,exDifficileStateMath.answer_toString())
                             }
                         }
                     },
@@ -224,27 +226,26 @@ Item {
                         name: "tres_difficile"
                         PropertyChanges {
                             target: tres_difficile
-                            color: exTresDifficileState.complete ? "#441976d2" :"#1976d2"
+                            color: exTresDifficileStateMath.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
-                            source:"qrc:/ExerciseTresDifficile.qml"
+                            source:"qrc:/ExerciseTresDifficileMath.qml"
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("tres_difficile",exTresDifficileState.complete,exTresDifficileState.answer_toString())
+                                logger.write_select_exercise("exercise_black",exTresDifficileStateMath.complete,exTresDifficileStateMath.answer_toString())
                             }
                         }
                     }
-
                 ]
                 Rectangle{
                     id:tres_difficile
-                    color: exTresDifficileState.complete? "#4490caf9" :"#90caf9"
+                    color: exTresDifficileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Très difficile"
+                        text: "Exercise"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
@@ -253,16 +254,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exTresDifficileState.complete)
+                                   if(exTresDifficileStateMath.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exTresDifficileState.complete)
+                                   if(exTresDifficileStateMath.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exTresDifficileState.complete? "#44000000" : "black"
+                        color:exTresDifficileStateMath.complete? "#44000000" : "black"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -281,29 +282,29 @@ Item {
                 }
                 Rectangle{
                     id:facile
-                    color: exFacileState.complete? "#4490caf9" :"#90caf9"
+                    color: exFacileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
-                        text: "Facile"
+                        text: "Exercise"
                         font.family: "Helvetica"
                         font.pointSize: 24
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exFacileState.complete)
+                                   if(exFacileStateMath.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exFacileState.complete)
+                                   if(exFacileStateMath.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exFacileState.complete? "#4400FF00" :"green"
+                        color:exFacileStateMath.complete? "#4400FF00" :"green"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -322,11 +323,11 @@ Item {
                 }
                 Rectangle{
                     id:difficile
-                    color: exDifficileState.complete? "#4490caf9" :"#90caf9"
+                    color: exDifficileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Difficile"
+                        text: "Exercise"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
@@ -335,16 +336,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exDifficileState.complete)
+                                   if(exDifficileStateMath.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exDifficileState.complete)
+                                   if(exDifficileStateMath.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exDifficileState.complete? "#44FF0000" : "red"
+                        color:exDifficileStateMath.complete? "#44FF0000" : "red"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -363,11 +364,11 @@ Item {
                 }
                 Rectangle{
                     id:tres_facile
-                    color: exTresFacileState.complete? "#4490caf9" :"#90caf9"
+                    color: exTresFacileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Très facile"
+                        text: "Exercise"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
@@ -376,16 +377,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exTresFacileState.complete)
+                                   if(exTresFacileStateMath.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exTresFacileState.complete)
+                                   if(exTresFacileStateMath.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exTresFacileState.complete? "#440000ff" :"blue"
+                        color:exTresFacileStateMath.complete? "#440000ff" :"blue"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width

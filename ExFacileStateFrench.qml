@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Item {
     property bool complete: false
-    property var answers :["","","","","","","","","","","","","","","","","","","",""]
+    property var answers :["","","","","","","","","","","","","","",""]
 
     property bool completeHasBeenWritten:false
     function writeState(){
@@ -15,8 +15,8 @@ Item {
     function answer_toString(){
         var tmp="";
         var i=0;
-        for(i=0;i<answers.length;i+=2)
-            tmp=tmp.concat("{",answers[i],"-",answers[i+1],"}");
+        for(i=0;i<answers.length;i++)
+            tmp=tmp.concat(answers[i],"-");
         return tmp;
     }
 }

@@ -6,31 +6,15 @@ import QtQuick.Dialogs 1.2
 
 Item{
     id:root
-    MessageDialog{
-        id:termine_dialog
-        visible:false;
-        icon: StandardIcon.Question
-        modality:Qt.ApplicationModal
-        standardButtons: StandardButton.Abort | StandardButton.Ok
-        title:"Exercice terminé"
-        text:"Es-tu sûr de vouloir te terminé l'exercice?<br>Vous ne pourrez modifier vos réponses"
-        onRejected:{visible=false}
-        onAccepted:{
-            exDifficileState.complete=true;
-            root.enabled=false;
-            pushState();
-            visible=false
-        }
-    }
 
     function pullState(){
-        root.enabled=!exDifficileState.complete
-        answer_text.text=exDifficileState.answer;
+        root.enabled=!exFacileStateMath.complete
+        answer_text.text=exFacileStateMath.answer;
     }
 
     function pushState(){
-        exDifficileState.answer=answer_text.text;
-        exDifficileState.writeState();
+        exFacileStateMath.answer=answer_text.text;
+        exFacileStateMath.writeState();
     }
 
     ColumnLayout{
@@ -87,7 +71,11 @@ Item{
             }
             MouseArea{
                 anchors.fill: parent
-                onClicked: termine_dialog.visible=true;
+                onClicked: {
+                    exFacileStateMath.complete=true;
+                    pushState();
+                    root.enabled=false;
+                }
             }
         }
     }

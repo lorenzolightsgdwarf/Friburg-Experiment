@@ -7,41 +7,25 @@ import QtQuick.Dialogs 1.2
 Item{
     id:root
 
-    MessageDialog{
-        id:termine_dialog
-        visible:false;
-        icon: StandardIcon.Question
-        modality:Qt.ApplicationModal
-        standardButtons: StandardButton.Abort | StandardButton.Ok
-        title:"Exercice terminé"
-        text:"Es-tu sûr de vouloir te terminé l'exercice?<br>Vous ne pourrez modifier vos réponses"
-        onRejected:{visible=false}
-        onAccepted:{
-            exTresFacileState.complete=true;
-            pushState();
-            root.enabled=false;
-            visible=false
-        }
-    }
 
     function pullState(){
-        root.enabled=!exTresFacileState.complete
-        q1.text=exTresFacileState.q1
-        q2.text=exTresFacileState.q2
-        q3.text=exTresFacileState.q3
-        q4.text=exTresFacileState.q4
-        q5.text=exTresFacileState.q5
-        q6.text=exTresFacileState.q6
+        root.enabled=!exTresFacileStateMath.complete
+        q1.text=exTresFacileStateMath.q1
+        q2.text=exTresFacileStateMath.q2
+        q3.text=exTresFacileStateMath.q3
+        q4.text=exTresFacileStateMath.q4
+        q5.text=exTresFacileStateMath.q5
+        q6.text=exTresFacileStateMath.q6
     }
 
     function pushState(){
-        exTresFacileState.q1=q1.text
-        exTresFacileState.q2=q2.text
-        exTresFacileState.q3=q3.text
-        exTresFacileState.q4=q4.text
-        exTresFacileState.q5=q5.text
-        exTresFacileState.q6=q6.text
-        exTresFacileState.writeState();
+        exTresFacileStateMath.q1=q1.text
+        exTresFacileStateMath.q2=q2.text
+        exTresFacileStateMath.q3=q3.text
+        exTresFacileStateMath.q4=q4.text
+        exTresFacileStateMath.q5=q5.text
+        exTresFacileStateMath.q6=q6.text
+        exTresFacileStateMath.writeState();
     }
 
 
@@ -183,7 +167,11 @@ Item{
             }
             MouseArea{
                 anchors.fill: parent
-                onClicked: termine_dialog.visible=true;
+                onClicked: {
+                    exTresFacileStateMath.complete=true;
+                    pushState();
+                    root.enabled=false;
+                }
             }
 
         }

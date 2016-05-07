@@ -7,37 +7,22 @@ import QtQuick.Dialogs 1.2
 Item{
     id:root
 
-    MessageDialog{
-        id:termine_dialog
-        visible:false;
-        icon: StandardIcon.Question
-        modality:Qt.ApplicationModal
-        standardButtons: StandardButton.Abort | StandardButton.Ok
-        title:"Exercice terminé"
-        text:"Es-tu sûr de vouloir te terminé l'exercice?<br>Vous ne pourrez modifier vos réponses"
-        onRejected:{visible=false}
-        onAccepted:{
-            exTresDifficileState.complete=true;
-            pushState();
-            root.enabled=false;
-            visible=false}
-    }
 
     function pullState(){
-        root.enabled=!exTresDifficileState.complete
-        q1.text=exTresDifficileState.q1
-        q2.text=exTresDifficileState.q2
-        q3.text=exTresDifficileState.q3
-        q4.text=exTresDifficileState.q4
+        root.enabled=!exDifficileStateFrench.complete
+        q1.text=exDifficileStateFrench.q1
+        q2.text=exDifficileStateFrench.q2
+        q3.text=exDifficileStateFrench.q3
+        q4.text=exDifficileStateFrench.q4
     }
 
     function pushState(){
-        exTresDifficileState.q1=q1.text
-        exTresDifficileState.q2=q2.text
-        exTresDifficileState.q3=q3.text
-        exTresDifficileState.q4=q4.text
+        exDifficileStateFrench.q1=q1.text
+        exDifficileStateFrench.q2=q2.text
+        exDifficileStateFrench.q3=q3.text
+        exDifficileStateFrench.q4=q4.text
 
-        exTresDifficileState.writeState();
+        exDifficileStateFrench.writeState();
     }
     ColumnLayout{
         anchors.fill: parent
@@ -55,6 +40,7 @@ Item{
         TextArea{
             id:text_area
             Layout.fillWidth: true
+            Layout.preferredHeight: 0.5*root.height
             text:"
 <i><b>Extrait 1:</b> Kamo. L’agence Babel</i><br>
 <p style=\"margin-left:10px\">
@@ -95,24 +81,9 @@ Il était près de onze heures du matin. Porcia et moi lisions Hésiode<sup>2</s
             textFormat: TextEdit.RichText
         }
         Text{
-            text:"Clique ici pour connaître la question"
-            font.family: "Helvetica"
-            font.pointSize: 12
-            fontSizeMode: Text.Fit;
-            minimumPointSize: 12;
-            MouseArea{
-                anchors.fill: parent
-                onClicked: {
-                    question_label.visible=true
-                    questions_group.visible=true
-                    parent.visible=false
-                }
-            }
-        }
-        Text{
             id:question_label
-            visible: false
-            text:"Dis quel roman commence:"
+            visible: true
+            text:"Dis quel roman commence par:"
             font.family: "Helvetica"
             font.pointSize: 12
             fontSizeMode: Text.Fit;
@@ -120,17 +91,18 @@ Il était près de onze heures du matin. Porcia et moi lisions Hésiode<sup>2</s
         }
         GridLayout{
             id:questions_group
-            visible: false
-            columns: 2
+            visible: true
+            columns: 4
             Layout.fillWidth: true
-            Text { text: "par la description d’un personnage:"; }
+            Layout.fillHeight: true
+            Text { text: "par la description d’un personnage:"; wrapMode: Text.WordWrap }
             TextField{id:q1;placeholderText:"extrait N°"}
-            Text { text: "par un dialogue:"; }
+            Text { text: "par un dialogue:";wrapMode: Text.WordWrap }
             TextField{id:q2;placeholderText:"extrait N°";}
-            Text { text: "par une action:" }
+            Text { text: "par une action:";wrapMode: Text.WordWrap }
             TextField{id:q3;placeholderText:"extrait N°"}
-            Text { text: "par un commentaire du narrateur:" }
-            TextField{id:q4;placeholderText:"extrait N°"}
+            Text { text: "par un commentaire du narrateur:";wrapMode: Text.WordWrap }
+            TextField{id:q4;placeholderText:"extrait N°";}
         }
 
         Rectangle{
@@ -155,7 +127,11 @@ Il était près de onze heures du matin. Porcia et moi lisions Hésiode<sup>2</s
             }
             MouseArea{
                 anchors.fill: parent
-                onClicked: termine_dialog.visible=true;
+                onClicked: {
+                    exDifficileStateFrench.complete=true;
+                    pushState();
+                    root.enabled=false;
+                }
             }
 
         }

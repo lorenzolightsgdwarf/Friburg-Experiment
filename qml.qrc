@@ -5,21 +5,33 @@
         <file>settings.png</file>
         <file>Button-Next.png</file>
         <file>InstructionsPage.qml</file>
-        <file>ExercisePage.qml</file>
+        <file>ExercisePageMath.qml</file>
         <file>QuestionnairePage.qml</file>
-        <file>ExerciseFacile.qml</file>
+        <file>ExerciseFacileFrench.qml</file>
         <file>AvatarDelegate.qml</file>
         <file>AvatarBannerListModel.qml</file>
-        <file>ExerciseDifficile.qml</file>
-        <file>ExerciseTresFacile.qml</file>
-        <file>ExerciseTresDifficile.qml</file>
-        <file>ExFacileState.qml</file>
-        <file>ExTresFacileState.qml</file>
-        <file>ExDifficileState.qml</file>
-        <file>ExTresDifficileState.qml</file>
+        <file>ExerciseFacileMath.qml</file>
+        <file>ExerciseTresFacileMath.qml</file>
+        <file>ExerciseDifficileFrench.qml</file>
+        <file>ExTresFacileStateFrench.qml</file>
+        <file>ExTresFacileStateMath.qml</file>
+        <file>ExFacileStateMath.qml</file>
+        <file>ExDifficileStateFrench.qml</file>
         <file>icon.ico</file>
         <file>icon.png</file>
         <file>ScrollBar.qml</file>
+        <file>ExerciseTresFacileFrench.qml</file>
+        <file>ExerciseTresDifficileFrench.qml</file>
+        <file>ExTresDifficileStateFrench.qml</file>
+        <file>ExercisePageFrench.qml</file>
+        <file>ExFacileStateFrench.qml</file>
+        <file>ExerciseDifficileMath.qml</file>
+        <file>ExDifficileStateMath.qml</file>
+        <file>ExTresDifficileStateMath.qml</file>
+        <file>ExerciseTresDifficileMath.qml</file>
+        <file>brush.png</file>
+        <file>eraser.png</file>
+        <file>exercises/exTresDifficileMath.png</file>
     </qresource>
     <qresource prefix="/avatars">
         <file>avatar_imgs/Primary/1.png</file>

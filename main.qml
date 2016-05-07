@@ -16,15 +16,17 @@ Window {
     title: qsTr("Friburg Experiment")
     color: "#e3f2fd"
 
-    property int condition:1
+    property int condition:1 //Math==1 French==2
     property bool exitFlag: false
 
     property int page:0
     onPageChanged: {
-        if(page==1){
-            page_loader.source="qrc:/ExercisePage.qml"
+        if(page==1 && window.condition==1){
+            page_loader.source="qrc:/ExercisePageMath.qml"
         }
-
+        else if(page==1 && window.condition==2){
+            page_loader.source="qrc:/ExercisePageFrench.qml"
+        }
         else if(page==2){
             page_loader.source="qrc:/QuestionnairePage.qml"
         }
