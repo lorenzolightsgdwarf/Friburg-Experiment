@@ -16,7 +16,7 @@ Window {
     title: qsTr("Friburg Experiment")
     color: "#e3f2fd"
 
-    property int condition:1 //Math==1 French==2
+    property int condition:2 //Math==1 French==2
     property bool exitFlag: false
 
     property int page:0

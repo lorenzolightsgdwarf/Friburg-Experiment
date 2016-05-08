@@ -90,7 +90,7 @@ void Logger::write_select_exercise(QString exercise,bool exercise_completed,QStr
     m_mutex.lock();
     m_exercise=exercise;
     m_exercise_completed=exercise_completed? "true":"false";
-    m_answer=text;
+    m_answer=text.replace("\n","<br>");
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);
     m_stream<<"Select_exercise;"<<m_condition<<";"<< QString::number(m_time.elapsed()/1000)<<";"
@@ -104,7 +104,7 @@ void Logger::write_select_exercise(QString exercise,bool exercise_completed,QStr
 
 void Logger::write_exercise_answer(QString text,bool exercise_completed){
     m_mutex.lock();
-    m_answer=text;
+    m_answer=text.replace("\n","<br>");
     m_exercise_completed=exercise_completed? "true":"false";
     m_file.open(QFile::WriteOnly | QFile::Append);
     m_stream.setDevice(&m_file);

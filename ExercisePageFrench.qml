@@ -51,6 +51,8 @@ Item {
 
     Component.onCompleted: {
         online_avatars_update_timer.getNextArrivalTime()
+        online_avatars_update_timer.interval=1000*(online_avatars_update_timer.current_value-
+                                                   online_avatars_update_timer.last_value);
         online_avatars_update_timer.start();
     }
 
@@ -66,7 +68,7 @@ Item {
             last_value=current_value;
             getNextArrivalTime();
             interval=1000*(current_value-last_value)
-            logger.write_update_online_avatars("Online avatar updated");
+            logger.write_update_online_avatars("");
             if(current_value!=99999999)
                 start();
         }

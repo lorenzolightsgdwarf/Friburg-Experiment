@@ -51,6 +51,8 @@ Item {
 
     Component.onCompleted: {
         online_avatars_update_timer.getNextArrivalTime()
+        online_avatars_update_timer.interval=1000*(online_avatars_update_timer.current_value-
+                                                   online_avatars_update_timer.last_value);
         online_avatars_update_timer.start();
     }
 
@@ -65,8 +67,8 @@ Item {
             updateModel();
             last_value=current_value;
             getNextArrivalTime();
-            interval=1000*(current_value-last_value)
-            logger.write_update_online_avatars("Online avatar updated");
+            interval=1000*(current_value-last_value);
+            logger.write_update_online_avatars("");
             if(current_value!=99999999)
                 start();
         }
@@ -80,6 +82,7 @@ Item {
             }
             current_value=min;
         }
+
         function updateModel(){
             var i=0;
             for(i=0;i<online_avatars.count;i++){
@@ -88,7 +91,7 @@ Item {
                         current_online_avatars.append(online_avatars.get(i))
                     }
                     else{
-                          current_online_avatars.set(online_avatars.get(i).avatarNumber-1,online_avatars.get(i))
+                         current_online_avatars.set(online_avatars.get(i).avatarNumber-1,online_avatars.get(i))
                     }
                 }
             }

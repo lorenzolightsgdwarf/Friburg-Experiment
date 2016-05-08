@@ -23,7 +23,7 @@ Item {
     }
     function answer_toString(){
         var tmp="";
-        tmp=tmp.concat("{",q1,"-",q2,"-",q3,"-",q4,"-",q5,"-",q6,"-",q7,"-",q8,"}");
+        tmp=tmp.concat(q1,"-",q2,"-",q3,"-",q4,"-",q5,"-",q6,"-",q7,"-",q8);
         return tmp;
     }
 }

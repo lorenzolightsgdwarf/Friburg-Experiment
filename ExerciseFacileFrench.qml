@@ -10,37 +10,40 @@ Item{
 
     function pullState(){
         root.enabled=!exFacileStateFrench.complete
-        a1.text=exFacileStateFrench.answers[0];
-        a2.text=exFacileStateFrench.answers[1];
-        a3.text=exFacileStateFrench.answers[2];
-        a4.text=exFacileStateFrench.answers[3];
-        a5.text=exFacileStateFrench.answers[4];
-        a6.text=exFacileStateFrench.answers[5];
-        a7.text=exFacileStateFrench.answers[6];
-        a8.text= exFacileStateFrench.answers[7];
-        a9.text=exFacileStateFrench.answers[9];
-        a10.text=exFacileStateFrench.answers[10];
-        a11.text=exFacileStateFrench.answers[11];
-        a12.text=exFacileStateFrench.answers[12];
-        a13.text=exFacileStateFrench.answers[13];
-        a14.text=exFacileStateFrench.answers[14];
+        a1.text=exFacileStateFrench.a1;
+        a2.text=exFacileStateFrench.a2;
+        a3.text=exFacileStateFrench.a3;
+        a4.text=exFacileStateFrench.a4;
+        a5.text=exFacileStateFrench.a5;
+        a6.text=exFacileStateFrench.a6;
+        a7.text=exFacileStateFrench.a7;
+        a8.text= exFacileStateFrench.a8;
+        a9.text=exFacileStateFrench.a9;
+        a10.text=exFacileStateFrench.a10;
+        a11.text=exFacileStateFrench.a11;
+        a12.text=exFacileStateFrench.a12;
+        a13.text=exFacileStateFrench.a13;
+        a14.text=exFacileStateFrench.a14;
+        a15.text=exFacileStateFrench.a15;
+
     }
 
     function pushState(){
-        exFacileStateFrench.answers[0]=a1.text;
-        exFacileStateFrench.answers[1]=a2.text;
-        exFacileStateFrench.answers[2]=a3.text;
-        exFacileStateFrench.answers[3]=a4.text;
-        exFacileStateFrench.answers[4]=a5.text;
-        exFacileStateFrench.answers[5]=a6.text;
-        exFacileStateFrench.answers[6]=a7.text;
-        exFacileStateFrench.answers[7]=a8.text;
-        exFacileStateFrench.answers[9]=a10.text;
-        exFacileStateFrench.answers[10]=a11.text;
-        exFacileStateFrench.answers[11]=a12.text;
-        exFacileStateFrench.answers[12]=a13.text;
-        exFacileStateFrench.answers[13]=a14.text;
-        exFacileStateFrench.answers[14]=a15.text;
+        exFacileStateFrench.a1=a1.text;
+        exFacileStateFrench.a2=a2.text;
+        exFacileStateFrench.a3=a3.text;
+        exFacileStateFrench.a4=a4.text;
+        exFacileStateFrench.a5=a5.text;
+        exFacileStateFrench.a6=a6.text;
+        exFacileStateFrench.a7=a7.text;
+        exFacileStateFrench.a8=a8.text;
+        exFacileStateFrench.a9=a9.text;
+        exFacileStateFrench.a10=a10.text;
+        exFacileStateFrench.a11=a11.text;
+        exFacileStateFrench.a12=a12.text;
+        exFacileStateFrench.a13=a13.text;
+        exFacileStateFrench.a14=a14.text;
+        exFacileStateFrench.a15=a15.text;
 
         exFacileStateFrench.writeState();
     }
@@ -82,7 +85,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>se souvenir</i>, indicatif présent)"
+                   text:"(<i>se souvenir</i>, indicatif présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -101,7 +104,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>avoir</i>, indicatif imparfait)"
+                   text:"(<i>avoir</i>, indicatif imparfait) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -120,7 +123,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>dire</i>, indicatif imparfait)"
+                   text:"(<i>dire</i>, indicatif imparfait) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -139,7 +142,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>devenir</i>, conditionnel présent)"
+                   text:"(<i>devenir</i>, conditionnel présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -147,7 +150,7 @@ Item{
                    color:"#7f7fff"
                }
                Text{
-                   text:"un grand virtuose. Ni son professeur ni ses parents ne"
+                   text:"un grand virtuose. Ni son professeur ni ses parents ne "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -158,7 +161,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>savoir</i>, indicatif imparfait)"
+                   text:"(<i>savoir</i>, indicatif imparfait) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -185,7 +188,7 @@ Item{
                    color:"#7f7fff"
                }
                Text{
-                   text:"justes. À dix-sept ans, selon les dires de spécialistes qui"
+                   text:"justes. À dix-sept ans, selon les dires de spécialistes qui "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -196,7 +199,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>surveiller</i>, indicatif présent)"
+                   text:"(<i>surveiller</i>, indicatif présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -215,7 +218,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>sembler</i>, conditionnel présent)"
+                   text:"(<i>sembler</i>, conditionnel présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -234,7 +237,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>être</i>, subjonctif présent)"
+                   text:"(<i>être</i>, subjonctif présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -242,7 +245,7 @@ Item{
                    color:"#7f7fff"
                }
                Text{
-                   text:"en voie de devenir un musicien émérite."
+                   text:"en voie de devenir un musicien émérite. "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -259,7 +262,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>voir</i>, indicatif  présent)"
+                   text:"(<i>voir</i>, indicatif  présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -267,7 +270,7 @@ Item{
                    color:"#7f7fff"
                }
                Text{
-                   text:"répéter tous les jours, je suis fière de son talent qui"
+                   text:"répéter tous les jours, je suis fière de son talent qui "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -278,7 +281,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>paraître</i>, indicatif  présent)"
+                   text:"(<i>paraître</i>, indicatif  présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -303,7 +306,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>inciter</i>, indicatif  présent)"
+                   text:"(<i>inciter</i>, indicatif  présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -322,7 +325,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>se fixer</i>, indicatif plus-que-parfait)"
+                   text:"(<i>se fixer</i>, indicatif plus-que-parfait) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -341,7 +344,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>pouvoir</i>, subjonctif présent)"
+                   text:"(<i>pouvoir</i>, subjonctif présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap
@@ -360,7 +363,7 @@ Item{
                    font.pointSize: 12
                }
                Text{
-                   text:"(<i>effleurer</i>, indicatif  présent)"
+                   text:"(<i>effleurer</i>, indicatif  présent) "
                    font.family: "Helvetica"
                    font.pointSize: 12
                    wrapMode: Text.WordWrap

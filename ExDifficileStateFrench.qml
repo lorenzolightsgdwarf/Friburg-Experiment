@@ -17,7 +17,7 @@ Item {
     }
     function answer_toString(){
         var tmp="";
-        tmp=tmp.concat("{",q1,"-",q2,"-",q3,"-",q4,"}");
+        tmp=tmp.concat(q1,"-",q2,"-",q3,"-",q4);
         return tmp;
     }
 }

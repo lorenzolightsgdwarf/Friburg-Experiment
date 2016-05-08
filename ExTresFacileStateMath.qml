@@ -20,7 +20,7 @@ Item {
     }
     function answer_toString(){
         var tmp="";
-        tmp=tmp.concat("{",q1,"-",q2,"-",q3,"-",q4,"-",q5,"-",q6,"}");
+        tmp=tmp.concat(q1,"-",q2,"-",q3,"-",q4,"-",q5,"-",q6);
         return tmp;
 
     }

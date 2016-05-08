@@ -11,124 +11,6 @@ Item{
     function pullState(){
         root.enabled=!exTresFacileStateFrench.complete
 
-        if(a1.text==exTresFacileStateFrench.a1)
-            a1.font.strikeout=true
-        else if(a2.text==exTresFacileStateFrench.a1)
-            a2.font.strikeout=true
-        else if(a3.text==exTresFacileStateFrench.a1)
-            a3.font.strikeout=true
-        else if(a4.text==exTresFacileStateFrench.a1)
-            a4.font.strikeout=true
-        else if(a5.text==exTresFacileStateFrench.a1)
-            a5.font.strikeout=true
-
-        if(b1.text==exTresFacileStateFrench.a2)
-            b1.font.strikeout=true
-        else if(b2.text==exTresFacileStateFrench.a2)
-            b2.font.strikeout=true
-        else if(b3.text==exTresFacileStateFrench.a2)
-            b3.font.strikeout=true
-        else if(b4.text==exTresFacileStateFrench.a2)
-            b4.font.strikeout=true
-        else if(b5.text==exTresFacileStateFrench.a2)
-            b5.font.strikeout=true
-
-        if(c1.text==exTresFacileStateFrench.a3)
-            c1.font.strikeout=true
-        else if(c2.text==exTresFacileStateFrench.a3)
-            c2.font.strikeout=true
-        else if(c3.text==exTresFacileStateFrench.a3)
-            c3.font.strikeout=true
-        else if(c4.text==exTresFacileStateFrench.a3)
-            c4.font.strikeout=true
-        else if(c5.text==exTresFacileStateFrench.a3)
-            c5.font.strikeout=true
-
-        if(d1.text==exTresFacileStateFrench.a4)
-            d1.font.strikeout=true
-        else if(d2.text==exTresFacileStateFrench.a4)
-            d2.font.strikeout=true
-        else if(d3.text==exTresFacileStateFrench.a4)
-            d3.font.strikeout=true
-        else if(d4.text==exTresFacileStateFrench.a4)
-            d4.font.strikeout=true
-        else if(d5.text==exTresFacileStateFrench.a4)
-            d5.font.strikeout=true
-
-        if(e1.text==exTresFacileStateFrench.a5)
-            e1.font.strikeout=true
-        else if(e2.text==exTresFacileStateFrench.a5)
-            e2.font.strikeout=true
-        else if(e3.text==exTresFacileStateFrench.a5)
-            e3.font.strikeout=true
-        else if(e4.text==exTresFacileStateFrench.a5)
-            e4.font.strikeout=true
-        else if(e5.text==exTresFacileStateFrench.a5)
-            e5.font.strikeout=true
-        else if(e6.text==exTresFacileStateFrench.a5)
-            e6.font.strikeout=true
-
-        if(f1.text==exTresFacileStateFrench.a6)
-            f1.font.strikeout=true
-        else if(f2.text==exTresFacileStateFrench.a6)
-            f2.font.strikeout=true
-        else if(f3.text==exTresFacileStateFrench.a6)
-            f3.font.strikeout=true
-        else if(f4.text==exTresFacileStateFrench.a6)
-            f4.font.strikeout=true
-        else if(f5.text==exTresFacileStateFrench.a6)
-            f5.font.strikeout=true
-        else if(f6.text==exTresFacileStateFrench.a6)
-            f6.font.strikeout=true
-
-        if(g1.text==exTresFacileStateFrench.a7)
-            g1.font.strikeout=true
-        else if(g2.text==exTresFacileStateFrench.a7)
-            g2.font.strikeout=true
-        else if(g3.text==exTresFacileStateFrench.a7)
-            g3.font.strikeout=true
-        else if(g4.text==exTresFacileStateFrench.a7)
-            g4.font.strikeout=true
-        else if(g5.text==exTresFacileStateFrench.a7)
-            g5.font.strikeout=true
-        else if(g6.text==exTresFacileStateFrench.a7)
-            g6.font.strikeout=true
-
-        if(h1.text==exTresFacileStateFrench.a8)
-            h1.font.strikeout=true
-        else if(h2.text==exTresFacileStateFrench.a8)
-            h2.font.strikeout=true
-        else if(h3.text==exTresFacileStateFrench.a8)
-            h3.font.strikeout=true
-        else if(h4.text==exTresFacileStateFrench.a8)
-            h4.font.strikeout=true
-        else if(h5.text==exTresFacileStateFrench.a8)
-            h5.font.strikeout=true
-
-        if(i1.text==exTresFacileStateFrench.a9)
-            i1.font.strikeout=true
-        else if(i2.text==exTresFacileStateFrench.a9)
-            i2.font.strikeout=true
-        else if(i3.text==exTresFacileStateFrench.a9)
-            i3.font.strikeout=true
-        else if(i4.text==exTresFacileStateFrench.a9)
-            i4.font.strikeout=true
-        else if(i5.text==exTresFacileStateFrench.a9)
-            i5.font.strikeout=true
-        else if(i6.text==exTresFacileStateFrench.a9)
-            i6.font.strikeout=true
-
-        if(j1.text==exTresFacileStateFrench.a10)
-            j1.font.strikeout=true
-        else if(j2.text==exTresFacileStateFrench.a10)
-            j2.font.strikeout=true
-        else if(j3.text==exTresFacileStateFrench.a10)
-            j3.font.strikeout=true
-        else if(j4.text==exTresFacileStateFrench.a10)
-            j4.font.strikeout=true
-        else if(j5.text==exTresFacileStateFrench.a10)
-            j5.font.strikeout=true
-
     }
 
     function pushState(){
@@ -167,8 +49,6 @@ Item{
                     anchors.fill: parent
                     onClicked: {
                         exTresFacileStateFrench.a1=parent.text;
-
-
                     }
                 }
             }

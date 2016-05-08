@@ -137,7 +137,7 @@ ListModel {
         activated:false
         isUpdate:true
         isSelecting:true
-        avatarNumber:1
+        avatarNumber:2
     }
     ListElement {
         name: "#2"
@@ -1417,7 +1417,7 @@ ListModel {
         friends:true
         sport:false
         telephone:true
-        livre:false
+        livre:true
         arrivalTime:2055
         activated:false
         isUpdate:true
@@ -1479,8 +1479,8 @@ ListModel {
     ListElement {
         name: "#1"
         img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:true
-        sport:false
+        friends:false
+        sport:true
         telephone:true
         livre:false
         arrivalTime:2250
@@ -1492,8 +1492,8 @@ ListModel {
     ListElement {
         name: "#1"
         img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:true
-        sport:false
+        friends:false
+        sport:true
         telephone:true
         livre:false
         arrivalTime:2265
