@@ -13,104 +13,104 @@ Rectangle{
 
     function checkMissingFields(){
         if(!agegroup.current){
-            dialog.text="Remplissez le champ: <b>Age</b>"
+            dialog.text="« Remplis le champ: <b>Age</b>"
             dialog.visible=true
              return false;
 
         }
         if(!sexgroup.current){
-            dialog.text="Remplissez le champ: <b>Sexe</b>"
+            dialog.text="« Remplis le champ: <b>Sexe</b>"
             dialog.visible=true
              return false;
 
         }
         if(!francegroup.current || (francegroup.current.text=="Autre" && franceniveau_autre.text.length==0)){
-            dialog.text="Remplissez le champ: <b>Niveau en français</b>"
+            dialog.text="« Remplis le champ: <b>Niveau en français</b>"
             dialog.visible=true
              return false;
 
         }
         if(!mathematiques.current || (mathematiques.current.text=="Autre" && mathematiquesniveau_autre.text.length==0)){
-            dialog.text="Remplissez le champ: <b>Niveau en mathématiques</b>"
+            dialog.text="« Remplis le champ: <b>Niveau en mathématiques</b>"
             dialog.visible=true
              return false;
 
         }
         if(!allemand.current || (allemand.current.text=="Autre" && allemandniveau_autre.text.length==0)){
-            dialog.text="Remplissez le champ: <b>Niveau en allemand</b>"
+            dialog.text="« Remplis le champ: <b>Niveau en allemand</b>"
             dialog.visible=true
              return false;
 
         }
         if(!sciences.current || (sciences.current.text=="Autre" && sciencesniveau_autre.text.length==0)){
-            dialog.text="Remplissez le champ: <b>Niveau en sciences</b>"
+            dialog.text="« Remplis le champ: <b>Niveau en sciences</b>"
             dialog.visible=true
              return false;
 
         }
         if(!penses_france.current){
-            dialog.text="Remplissez le champ: <b>Que penses-tu du français?</b>"
+            dialog.text="« Remplis le champ: <b>Que penses-tu du français?</b>"
             dialog.visible=true
              return false;
 
         }
         if(!penses_mathematiques.current){
-            dialog.text="Remplissez le champ: <b>Que penses-tu du mathématiques?</b>"
+            dialog.text="« Remplis le champ: <b>Que penses-tu du mathématiques?</b>"
             dialog.visible=true
              return false;
 
         }
         if(!ordinateur.current){
-            dialog.text="Remplissez le champ: <b>A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?</b>"
+            dialog.text="« Remplis le champ: <b>A quelle fréquence utilises-tu l’ordinateur, le smartphone ou d’autres appareils pour communiquer avec les autres, sur une échelle de 1 à 10?</b>"
             dialog.visible=true
              return false;
 
         }
 
         if(window.condition==2 && !plaisir_historie.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!plaisir_verbes.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!plaisir_romans.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!plaisir_intrus.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
         }
 
         if(window.condition==2 && !difficulte_historie.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!difficulte_verbes.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!difficulte_romans.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==2 &&!difficulte_intrus.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
         }
@@ -118,49 +118,49 @@ Rectangle{
 
         /*Math*/
         if(window.condition==1 && !plaisir_matrice.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!plaisir_horloge.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!plaisir_courses.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!plaisir_fraction.current){
-            dialog.text="Remplissez le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
+            dialog.text="« Remplis le champ: <b>Revenons aux quatre exercices que tu viens d’effectuer. Qu’as-tu ressenti en les réalisant en termes de plaisir et d’ennui</b>"
             dialog.visible=true
              return false;
         }
 
         if(window.condition==1 && !difficulte_matrice.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!difficulte_horloge.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!difficulte_courses.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
 
         }
         if(window.condition==1 &&!difficulte_fraction.current){
-            dialog.text="Remplissez le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
+            dialog.text="« Remplis le champ: <b>Toujours à propos de ces 4 exercices, comment les as-tu trouvés en termes de difficulté</b>"
             dialog.visible=true
              return false;
         }
@@ -178,7 +178,7 @@ Rectangle{
         modality:Qt.ApplicationModal
         standardButtons: StandardButton.Ok
         title:"Questionnaire"
-        text:"Remplissez le champ: "
+        text:"« Remplis le champ: "
         onAccepted:{
             visible=false
         }
