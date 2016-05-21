@@ -247,7 +247,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Exercise"
+                        text: "Exercice"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
@@ -291,7 +291,7 @@ Item {
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
-                        text: "Exercise"
+                        text: "Exercice"
                         font.family: "Helvetica"
                         font.pointSize: 24
                         fontSizeMode: Text.Fit;
@@ -329,7 +329,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Exercise"
+                        text: "Exercice"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
@@ -370,7 +370,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
-                        text: "Exercise"
+                        text: "Exercice"
                         anchors.fill: parent
                         anchors.margins: 10
                         verticalAlignment:Text.AlignVCenter
