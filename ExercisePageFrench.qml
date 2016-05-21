@@ -283,47 +283,6 @@ Item {
                     }
                 }
                 Rectangle{
-                    id:facile
-                    color: exFacileStateFrench.complete? "#4490caf9" :"#90caf9"
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    Text {
-                        anchors.fill: parent
-                        anchors.margins: 10
-                        verticalAlignment:Text.AlignVCenter
-                        text: "Exercice"
-                        font.family: "Helvetica"
-                        font.pointSize: 24
-                        fontSizeMode: Text.Fit;
-                        minimumPointSize: 12;
-                        color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exFacileStateFrench.complete)
-                                       return"#44000000"
-                                   else return "black"
-                               }else
-                                   if(exFacileStateFrench.complete)
-                                       return"#44FFFFFF"
-                                   else return "white"
-                    }
-                    Rectangle{
-                        color:exFacileStateFrench.complete? "#4400FF00" :"green"
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: parent.height-10
-                        height: width
-                        anchors.margins: 10
-                        radius: width/2
-                        anchors.right: parent.right
-                    }
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            if(exercises_loader.item)
-                                exercises_loader.item.pushState();
-                            ex_selector.state="facile";
-                        }
-                    }
-                }
-                Rectangle{
                     id:difficile
                     color: exDifficileStateFrench.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
@@ -361,6 +320,47 @@ Item {
                             if(exercises_loader.item)
                                 exercises_loader.item.pushState();
                             ex_selector.state="difficile";
+                        }
+                    }
+                }
+                Rectangle{
+                    id:facile
+                    color: exFacileStateFrench.complete? "#4490caf9" :"#90caf9"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    Text {
+                        anchors.fill: parent
+                        anchors.margins: 10
+                        verticalAlignment:Text.AlignVCenter
+                        text: "Exercice"
+                        font.family: "Helvetica"
+                        font.pointSize: 24
+                        fontSizeMode: Text.Fit;
+                        minimumPointSize: 12;
+                        color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
+                                   if(exFacileStateFrench.complete)
+                                       return"#44000000"
+                                   else return "black"
+                               }else
+                                   if(exFacileStateFrench.complete)
+                                       return"#44FFFFFF"
+                                   else return "white"
+                    }
+                    Rectangle{
+                        color:exFacileStateFrench.complete? "#4400FF00" :"green"
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.height-10
+                        height: width
+                        anchors.margins: 10
+                        radius: width/2
+                        anchors.right: parent.right
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            if(exercises_loader.item)
+                                exercises_loader.item.pushState();
+                            ex_selector.state="facile";
                         }
                     }
                 }
