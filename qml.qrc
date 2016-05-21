@@ -63,5 +63,6 @@
         <file>exercises/ex_tres_facile/image009.png</file>
         <file>exercises/ex_tres_facile/image011.png</file>
         <file>exercises/ex_tres_facile/image013.png</file>
+        <file>exercises/bakery.png</file>
     </qresource>
 </RCC>

@@ -1343,7 +1343,7 @@ Rectangle{
                         Rectangle {
                             anchors.verticalCenter: reference_text.verticalCenter
                             width: radioButton_reference.width*8+7*(list_item.width-10*radioButton_reference.width-40)/10
-                            height: 3
+                            height: 2
                             color: "black"
                         }
                         Text {
