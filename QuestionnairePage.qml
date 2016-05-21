@@ -189,7 +189,7 @@ Rectangle{
         modality:Qt.ApplicationModal
         standardButtons: StandardButton.Ok
         title:"Merci"
-        text:"Merci pour votre participation!"
+        text:"Merci pour ta participation!"
         onAccepted:{
             exitFlag=true
             Qt.quit()
