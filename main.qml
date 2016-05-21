@@ -67,7 +67,7 @@ Window {
         id: exit_message
         visible: false
         title: "Quitter"
-        text: "êtes-vous sûr de vouloir quitter?"
+        text: "Es-tu sûr de vouloir quitter?"
         onYes: {
             exitFlag=true
             Qt.quit();
