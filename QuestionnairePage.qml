@@ -1286,7 +1286,8 @@ Rectangle{
                     }
                     ExclusiveGroup { id: ordinateur }
                     Row{
-                        spacing: 5
+                        Layout.alignment:Qt.AlignVCenter | Qt.AlignHCenter
+                        spacing: (list_item.width-10*radioButton_reference.width-40)/10
                         leftPadding: 10
                         RadioButton {
                             text: "1"
@@ -1308,10 +1309,6 @@ Rectangle{
                             text: "5"
                             exclusiveGroup: ordinateur
                         }
-                    }
-                    Row{
-                        spacing: 5
-                        leftPadding: 10
                         RadioButton {
                             text: "6"
                             exclusiveGroup: ordinateur
@@ -1329,9 +1326,30 @@ Rectangle{
                             exclusiveGroup: ordinateur
                         }
                         RadioButton {
+                            id:radioButton_reference
                             text: "10"
                             exclusiveGroup: ordinateur
                         }
+                    }
+                    Row{
+                        Layout.alignment:Qt.AlignVCenter | Qt.AlignHCenter
+                        //spacing: (list_item.width-10*radioButton_reference.width-40)/10
+                        spacing:5
+                        leftPadding: 10
+                        Text{
+                            id:reference_text
+                            text: "Minimal"
+                        }
+                        Rectangle {
+                            anchors.verticalCenter: reference_text.verticalCenter
+                            width: radioButton_reference.width*8+7*(list_item.width-10*radioButton_reference.width-40)/10
+                            height: 3
+                            color: "black"
+                        }
+                        Text {
+                            text: "Maximal"
+                        }
+
                     }
                 }
             }
