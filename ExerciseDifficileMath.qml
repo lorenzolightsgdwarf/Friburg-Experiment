@@ -18,17 +18,11 @@ Item{
     }
     function pullState(){
         root.enabled=!exDifficileStateMath.complete
-        if(exDifficileStateMath.answer=="")
-            answer_text.text="Ecrivez ici votre réponse"
-        else
-            answer_text.text=exDifficileStateMath.answer;
+        answer_text.text=exDifficileStateMath.answer;
     }
 
     function pushState(){
-        if(answer_text.text=="Ecrivez ici votre réponse")
-            exDifficileStateMath.answer="";
-        else
-            exDifficileStateMath.answer=answer_text.text;
+        exDifficileStateMath.answer=answer_text.text;
         exDifficileStateMath.writeState();
     }
 
@@ -57,7 +51,7 @@ Item{
             TextArea{
                 id:answer_text
                 Layout.preferredWidth: root.width/3
-                text:"Ecrivez ici votre réponse"
+                text:""
                 font.family: "Helvetica"
                 font.pointSize: 12
                 horizontalScrollBarPolicy:Qt.ScrollBarAlwaysOff
