@@ -6,7 +6,25 @@ import QtQuick.Dialogs 1.2
 
 Item{
     id:root
-
+    Timer{
+        id:timer4loggingText
+        interval: 5000
+        property var currentObject
+        onCurrentObjectChanged: stop()
+        onRunningChanged: if(currentObject && running){
+                              logger.write_general_action("Typing",currentObject.objectName)
+                          }
+    }
+    Timer{
+        id:timer4loggingCalculations
+        interval: 5000
+        property string prev_text:"";
+        onTriggered:
+            if(myCanvas.text!=prev_text){
+                logger.write_general_action("Typing","Area_Calculs:"+myCanvas.text)
+                prev_text=myCanvas.text
+            }
+    }
     function pullState(){
         root.enabled=!exTresDifficileStateMath.complete
         a1.text=exTresDifficileStateMath.q1
@@ -75,6 +93,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_1"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -92,6 +116,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_2"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -109,6 +139,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_3"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -126,6 +162,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_4"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -143,6 +185,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_5"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -160,6 +208,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_6"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -177,6 +231,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_7"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
                     Item{
@@ -194,6 +254,12 @@ Item{
                             horizontalAlignment:TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             placeholderText:"*"
+                            objectName: "Question_8"
+                            onActiveFocusChanged: if(activeFocus){
+                                                    timer4loggingText.currentObject=this;
+                                                    logger.write_general_action("Mouse_Select",objectName)
+                                                  }
+                            onTextChanged: timer4loggingText.start();
                         }
                     }
 
@@ -225,7 +291,10 @@ Item{
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
                     anchors.right: parent.right
-
+                    onActiveFocusChanged: if(activeFocus){
+                                            logger.write_general_action("Mouse_Select","Area_Calculs")
+                                          }
+                    onTextChanged: timer4loggingCalculations.start();
                 }
 
 

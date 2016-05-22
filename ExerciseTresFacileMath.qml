@@ -6,7 +6,15 @@ import QtQuick.Dialogs 1.2
 
 Item{
     id:root
-
+    Timer{
+        id:timer4loggingText
+        interval: 5000
+        property var currentObject
+        onCurrentObjectChanged: stop()
+        onRunningChanged: if(currentObject && running){
+                              logger.write_general_action("Typing",currentObject.objectName)
+                          }
+    }
 
     function pullState(){
         root.enabled=!exTresFacileStateMath.complete
@@ -74,6 +82,12 @@ Item{
                     TextField{
                         id:q1
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_1"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
                 ColumnLayout{
@@ -87,6 +101,12 @@ Item{
                     TextField{
                         id:q2
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_2"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
                 ColumnLayout{
@@ -100,6 +120,12 @@ Item{
                     TextField{
                         id:q3
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_3"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
                 ColumnLayout{
@@ -113,6 +139,12 @@ Item{
                     TextField{
                         id:q4
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_4"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
                 ColumnLayout{
@@ -126,6 +158,12 @@ Item{
                     TextField{
                         id:q5
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_5"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
                 ColumnLayout{
@@ -139,6 +177,12 @@ Item{
                     TextField{
                         id:q6
                         Layout.alignment:Qt.AlignHCenter | Qt.AlignVCenter
+                        objectName: "Fraction_6"
+                        onActiveFocusChanged: if(activeFocus){
+                                                timer4loggingText.currentObject=this;
+                                                logger.write_general_action("Mouse_Select",objectName)
+                                              }
+                        onTextChanged: timer4loggingText.start();
                     }
                 }
 

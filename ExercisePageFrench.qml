@@ -478,6 +478,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     currentIndex:-1
+                    onMovementEnded: scrolltimer4log.start()
                     model: avatar_list_model
                     delegate:
                         AvatarDelegate{
@@ -515,6 +516,14 @@ Item {
                             }
                         }
 
+                    }
+                    Timer{
+                        id:scrolltimer4log
+                        running: false
+                        interval: 10000
+                        onRunningChanged: if(running){
+                                              logger.write_general_action("Scrolling_Avatars")
+                                          }
                     }
                 }
             }

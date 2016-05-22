@@ -49,6 +49,7 @@ Item{
                     anchors.fill: parent
                     onClicked: {
                         exTresFacileStateFrench.a1=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
                     }
                 }
             }
@@ -63,8 +64,7 @@ Item{
                     anchors.fill: parent
                     onClicked: {
                         exTresFacileStateFrench.a1=parent.text;
-
-
+                        logger.write_general_action("Mouse_Select",parent.text)
                     }
                 }
             }
@@ -80,6 +80,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a1=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -98,6 +99,7 @@ Item{
 
                         exTresFacileStateFrench.a1=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -114,6 +116,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a1=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -140,6 +143,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a2=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -158,6 +162,7 @@ Item{
 
                         exTresFacileStateFrench.a2=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -174,6 +179,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a2=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -191,6 +197,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a2=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -208,6 +215,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a2=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -235,6 +243,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a3=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -252,6 +261,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a3=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -269,6 +279,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a3=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -286,6 +297,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a3=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -303,6 +315,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a3=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -329,6 +342,7 @@ Item{
                     anchors.fill: parent
                     onClicked: {
                         exTresFacileStateFrench.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -346,6 +360,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -363,6 +378,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -380,6 +396,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -397,6 +414,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -425,6 +443,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -442,6 +461,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -459,6 +479,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -476,6 +497,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -493,6 +515,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -510,6 +533,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a5=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -538,6 +562,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a6=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -556,6 +581,7 @@ Item{
 
                         exTresFacileStateFrench.a6=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -573,6 +599,7 @@ Item{
 
                         exTresFacileStateFrench.a6=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -589,6 +616,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a6=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -607,6 +635,7 @@ Item{
 
                         exTresFacileStateFrench.a6=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -623,6 +652,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a6=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -650,6 +680,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -667,6 +698,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -684,6 +716,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -701,6 +734,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -718,6 +752,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -735,6 +770,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -752,6 +788,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a7=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -781,6 +818,7 @@ Item{
 
                         exTresFacileStateFrench.a8=parent.text;
 
+                        logger.write_general_action("Mouse_Select",parent.text)
 
                     }
                 }
@@ -797,6 +835,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a8=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -814,6 +853,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a8=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -831,6 +871,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a8=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -848,6 +889,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a8=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -876,6 +918,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -893,6 +936,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -910,6 +954,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -927,6 +972,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -944,6 +990,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -961,6 +1008,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -988,6 +1036,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -1005,6 +1054,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -1022,6 +1072,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -1039,6 +1090,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }
@@ -1056,6 +1108,7 @@ Item{
                     onClicked: {
 
                         exTresFacileStateFrench.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
 
 
                     }

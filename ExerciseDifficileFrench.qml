@@ -7,6 +7,15 @@ import QtQuick.Dialogs 1.2
 Item{
     id:root
 
+    Timer{
+        id:timer4loggingText
+        interval: 5000
+        property var currentObject
+        onCurrentObjectChanged: stop()
+        onRunningChanged: if(currentObject && running){
+                              logger.write_general_action("Typing",currentObject.objectName)
+                          }
+    }
 
     function pullState(){
         root.enabled=!exDifficileStateFrench.complete
@@ -96,13 +105,42 @@ Il était près de onze heures du matin. Porcia et moi lisions Hésiode<sup>2</s
             Layout.fillWidth: true
             Layout.fillHeight: true
             Text { text: "par la description d’un personnage:"; wrapMode: Text.WordWrap }
-            TextField{id:q1;placeholderText:"extrait N°"}
+            TextField{id:q1;placeholderText:"extrait N°";
+                objectName: "Question_1"
+                onActiveFocusChanged: if(activeFocus){
+                                        timer4loggingText.currentObject=this;
+                                        logger.write_general_action("Mouse_Select",objectName)
+                                      }
+                onTextChanged: timer4loggingText.start();
+
+            }
             Text { text: "par un dialogue:";wrapMode: Text.WordWrap }
-            TextField{id:q2;placeholderText:"extrait N°";}
+            TextField{id:q2;placeholderText:"extrait N°";
+                objectName: "Question_2"
+                onActiveFocusChanged: if(activeFocus){
+                                        timer4loggingText.currentObject=this;
+                                        logger.write_general_action("Mouse_Select",objectName)
+                                      }
+                onTextChanged: timer4loggingText.start();
+            }
             Text { text: "par une action:";wrapMode: Text.WordWrap }
-            TextField{id:q3;placeholderText:"extrait N°"}
+            TextField{id:q3;placeholderText:"extrait N°"
+                objectName: "Question_3"
+                onActiveFocusChanged: if(activeFocus){
+                                        timer4loggingText.currentObject=this;
+                                        logger.write_general_action("Mouse_Select",objectName)
+                                      }
+                onTextChanged: timer4loggingText.start();
+            }
             Text { text: "par un commentaire du narrateur:";wrapMode: Text.WordWrap }
-            TextField{id:q4;placeholderText:"extrait N°";}
+            TextField{id:q4;placeholderText:"extrait N°";
+                objectName: "Question_4"
+                onActiveFocusChanged: if(activeFocus){
+                                        timer4loggingText.currentObject=this;
+                                        logger.write_general_action("Mouse_Select",objectName)
+                                      }
+                onTextChanged: timer4loggingText.start();
+            }
         }
 
         Rectangle{

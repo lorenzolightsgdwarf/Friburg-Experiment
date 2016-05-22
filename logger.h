@@ -26,6 +26,7 @@ public:
     Q_INVOKABLE void write_update_online_avatars(QString n);
     Q_INVOKABLE void write_finish();
     Q_INVOKABLE void write_questionnaire(QString text);
+    Q_INVOKABLE void write_general_action(QString action, QString details=QString());
 signals:
     void errorChanged();
 private:

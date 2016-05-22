@@ -6,7 +6,15 @@ import QtQuick.Dialogs 1.2
 
 Item{
     id:root
-
+    Timer{
+        id:timer4loggingText
+        interval: 5000
+        property var currentObject
+        onCurrentObjectChanged: stop()
+        onRunningChanged: if(currentObject && running){
+                              logger.write_general_action("Typing",currentObject.objectName)
+                          }
+    }
     function pullState(){
         root.enabled=!exFacileStateMath.complete
         answer_text.text=exFacileStateMath.answer;
@@ -45,6 +53,11 @@ Item{
                 font.family: "Helvetica"
                 font.pointSize: 12
                 horizontalScrollBarPolicy:Qt.ScrollBarAlwaysOff
+                onActiveFocusChanged: if(activeFocus){
+                                        timer4loggingText.currentObject=this;
+                                        logger.write_general_action("Mouse_Select",objectName)
+                                      }
+                onTextChanged: timer4loggingText.start();
             }
         }
 

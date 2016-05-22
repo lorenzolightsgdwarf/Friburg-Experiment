@@ -476,6 +476,7 @@ Item {
                 ListView{
                     id:avatar_list_view
                     clip:true
+                    onMovementStarted: scrolltimer4log.start()
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     currentIndex:-1
@@ -517,6 +518,16 @@ Item {
                         }
 
                     }
+
+                    Timer{
+                        id:scrolltimer4log
+                        running: false
+                        interval: 10000
+                        onRunningChanged: if(running){
+                                              logger.write_general_action("Scrolling_Avatars")
+                                          }
+                    }
+
                 }
             }
             ScrollBar {

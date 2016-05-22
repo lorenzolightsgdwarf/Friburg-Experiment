@@ -7,7 +7,15 @@ import QtQuick.Dialogs 1.2
 /*Verbs*/
 Item{
     id:root
-
+    Timer{
+        id:timer4loggingText
+        interval: 5000
+        property var currentObject
+        onCurrentObjectChanged: stop()
+        onRunningChanged: if(currentObject && running){
+                              logger.write_general_action("Typing",currentObject.objectName)
+                          }
+    }
     function pullState(){
         root.enabled=!exFacileStateFrench.complete
         a1.text=exFacileStateFrench.a1;
@@ -83,6 +91,12 @@ Item{
                    id:a1
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_1"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>se souvenir</i>, indicatif présent) "
@@ -102,6 +116,12 @@ Item{
                    id:a2
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_2"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>avoir</i>, indicatif imparfait) "
@@ -121,6 +141,12 @@ Item{
                    id:a3
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_3"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>dire</i>, indicatif imparfait) "
@@ -140,6 +166,12 @@ Item{
                    id:a4
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_4"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>devenir</i>, conditionnel présent) "
@@ -159,6 +191,12 @@ Item{
                    id:a5
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_5"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>savoir</i>, indicatif imparfait) "
@@ -178,6 +216,12 @@ Item{
                    id:a6
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_6"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>se révéler</i>, conditionnel présent)"
@@ -197,6 +241,12 @@ Item{
                    id:a7
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_7"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>surveiller</i>, indicatif présent) "
@@ -216,6 +266,12 @@ Item{
                    id:a8
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_8"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>sembler</i>, conditionnel présent) "
@@ -235,6 +291,12 @@ Item{
                    id:a9
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_9"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>être</i>, subjonctif présent) "
@@ -260,6 +322,12 @@ Item{
                    id:a10
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_10"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>voir</i>, indicatif  présent) "
@@ -279,6 +347,12 @@ Item{
                    id:a11
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_11"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>paraître</i>, indicatif  présent) "
@@ -304,6 +378,12 @@ Item{
                    id:a12
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_12"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>inciter</i>, indicatif  présent) "
@@ -323,6 +403,12 @@ Item{
                    id:a13
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_13"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>se fixer</i>, indicatif plus-que-parfait) "
@@ -342,6 +428,12 @@ Item{
                    id:a14
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_14"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>pouvoir</i>, subjonctif présent) "
@@ -361,6 +453,12 @@ Item{
                    id:a15
                    font.family: "Helvetica"
                    font.pointSize: 12
+                   objectName: "Question_15"
+                   onActiveFocusChanged: if(activeFocus){
+                                           timer4loggingText.currentObject=this;
+                                           logger.write_general_action("Mouse_Select",objectName)
+                                         }
+                   onTextChanged: timer4loggingText.start();
                }
                Text{
                    text:"(<i>effleurer</i>, indicatif  présent) "
