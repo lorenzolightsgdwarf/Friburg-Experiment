@@ -16,6 +16,8 @@ Item{
                           }
     }
     Timer{
+        /*Differently from timer4loggingText, where the action is logged at the beginning of the typing,
+        timer4loggingCalculations logs after 5 sec from the beginning of the typing.*/
         id:timer4loggingCalculations
         interval: 5000
         property string prev_text:"";
