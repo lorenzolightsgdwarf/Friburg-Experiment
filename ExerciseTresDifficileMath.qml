@@ -9,6 +9,7 @@ Item{
     Timer{
         id:timer4loggingText
         interval: 5000
+        running: false
         property var currentObject
         onCurrentObjectChanged: stop()
         onRunningChanged: if(currentObject && running){
@@ -20,6 +21,7 @@ Item{
         timer4loggingCalculations logs after 5 sec from the beginning of the typing.*/
         id:timer4loggingCalculations
         interval: 5000
+        running: false
         property string prev_text:"";
         onTriggered:
             if(myCanvas.text!=prev_text){

@@ -9,6 +9,7 @@ Item{
     Timer{
         id:timer4loggingText
         interval: 5000
+        running: false
         property var currentObject
         onCurrentObjectChanged: stop()
         onRunningChanged: if(currentObject && running){
