@@ -43,7 +43,7 @@ void Logger::init(){
             setError("Cannot create directory of the logs. Move the executable in another folder.");
             return;
         }
-    QString log_file_name=QDateTime::currentDateTime().toString("dMyyhms");
+    QString log_file_name=QDateTime::currentDateTime().toString("dd_MM_yy_hh_mm_ss_z");
     m_file.setFileName(extstr+"logs/"+log_file_name+".csv");
     m_file_questionnaire.setFileName(extstr+"logs/"+log_file_name+"_questionnaire.csv");
     write_header();
