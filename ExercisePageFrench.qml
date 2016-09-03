@@ -91,6 +91,7 @@ Item {
                 }
             }
             current_value=min;
+
         }
         function updateModel(){
             var i=0;
@@ -100,7 +101,7 @@ Item {
                         current_online_avatars.append(online_avatars.get(i))
                     }
                     else{
-                          current_online_avatars.set(online_avatars.get(i).avatarNumber-1,online_avatars.get(i))
+                         current_online_avatars.set(online_avatars.get(i).avatarNumber-1,online_avatars.get(i))
                     }
                 }
             }

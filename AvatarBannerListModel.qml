@@ -4,1461 +4,1854 @@ ListModel {
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
+
+        arrivalTime:10
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:1
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:20
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:1
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:25
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:1
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:true
+        telephone:true
+        livre:false
+
+        arrivalTime:30
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:1
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:50
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:1
+    }
+
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:30
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:50
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:80
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:false
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:90
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:100
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:115
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:2
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:90
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:3
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:100
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:3
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:110
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:3
+    }
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:105
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:3
+    }
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:true
+
+        arrivalTime:130
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:3
+    }
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:true
+
+        arrivalTime:140
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:3
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
         arrivalTime:180
+
         activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:3
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:185
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:3
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:110
+
+        activated:false
+
         isUpdate:false
         isSelecting:true
-        avatarNumber:1
+        avatarNumber:4
     }
+
     ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:130
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:4
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:false
         telephone:false
         livre:false
-        arrivalTime:190
+
+        arrivalTime:140
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:1
-
+        avatarNumber:4
     }
     ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:195
+
+        arrivalTime:170
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:1
-
+        avatarNumber:4
     }
     ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+        name: "#4"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
         friends:true
-        sport:true
+        sport:false
         telephone:true
         livre:false
+
+        arrivalTime:180
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:4
+    }
+
+    ListElement {
+        name: "#4"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:true
+
         arrivalTime:200
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:1
-
+        avatarNumber:4
     }
     ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+        name: "#4"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
         friends:true
-        sport:true
+        sport:false
         telephone:true
-        livre:false
+        livre:true
+
         arrivalTime:230
+
         activated:false
+
         isUpdate:true
         isSelecting:false
-        avatarNumber:1
+        avatarNumber:4
     }
-
-
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:375
+
+        arrivalTime:140
+
         activated:false
+
         isUpdate:false
         isSelecting:true
-        avatarNumber:2
-
+        avatarNumber:5
     }
     ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:390
+
+        arrivalTime:170
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:2
+        avatarNumber:5
     }
+
     ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:false
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
         sport:false
         telephone:false
         livre:false
-        arrivalTime:400
+
+        arrivalTime:190
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:2
-
+        avatarNumber:5
     }
     ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:false
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:410
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:2
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
 
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:475
+
+        arrivalTime:200
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:2
+        avatarNumber:5
     }
     ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:475.5
+
+        arrivalTime:210
+
         activated:false
+
         isUpdate:true
         isSelecting:false
-        avatarNumber:2
+        avatarNumber:5
     }
 
     ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:true
+        telephone:true
         livre:false
-        arrivalTime:450
+
+        arrivalTime:420
+
         activated:false
-        isUpdate:false
+
+        isUpdate:true
         isSelecting:true
-        avatarNumber:3
+        avatarNumber:5
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:true
+        telephone:true
+        livre:true
+
+        arrivalTime:430
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:5
     }
     ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:true
+        sport:true
+        telephone:true
+        livre:true
+
         arrivalTime:460
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:3
-
+        avatarNumber:5
     }
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:true
+        sport:true
+        telephone:true
+        livre:true
+
+        arrivalTime:480
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:5
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:170
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:6
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:190
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:6
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:200
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:6
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:false
+        sport:true
+        telephone:true
+        livre:false
+
+        arrivalTime:220
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:6
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:false
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:230
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:6
+    }
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:false
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:250
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:6
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:200
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:7
+    }
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:210
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:7
+    }
+
     ListElement {
         name: "#3"
         img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:230
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:7
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
         friends:true
         sport:false
         telephone:false
         livre:false
+
+        arrivalTime:250
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:7
+    }
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:280
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:7
+    }
+
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:290
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:7
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:240
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:270
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:280
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:290
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:340
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:350
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:370
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:390
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:410
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:8
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:290
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:9
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:310
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:9
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:320
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:9
+    }
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:350
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:9
+    }
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:370
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:9
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:310
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:10
+    }
+
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:330
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:350
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:380
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:false
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:400
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:false
+        sport:true
+        telephone:true
+        livre:true
+
+        arrivalTime:410
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:false
+        sport:true
+        telephone:true
+        livre:false
+
+        arrivalTime:430
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:450
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:10
+    }
+    ListElement {
+        name: "#2"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:460
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:10
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:350
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:370
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:390
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:400
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#5"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:410
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#8"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:430
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#8"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
+        friends:false
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:440
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:11
+    }
+    ListElement {
+        name: "#8"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
+        friends:false
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:480
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:11
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:390
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:12
+    }
+
+
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:400
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:12
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:false
+
+        arrivalTime:410
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:12
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:true
+        telephone:true
+        livre:false
+
+        arrivalTime:440
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:12
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:460
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:12
+    }
+    ListElement {
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
         arrivalTime:470
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:3
-
+        avatarNumber:12
     }
     ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+        name: "#6"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
         friends:true
         sport:false
-        telephone:true
+        telephone:false
         livre:false
-        arrivalTime:535
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:3
 
+        arrivalTime:490
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:12
+    }
+
+    ListElement {
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:490
+
+        activated:false
+
+        isUpdate:false
+        isSelecting:true
+        avatarNumber:13
     }
     ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:500
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:13
+    }
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
         friends:true
         sport:false
-        telephone:true
-        livre:true
+        telephone:false
+        livre:false
+
+        arrivalTime:520
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:13
+    }
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
+        arrivalTime:530
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:13
+    }
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
         arrivalTime:550
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:3
 
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:true
-        arrivalTime:560
         activated:false
+
         isUpdate:true
         isSelecting:false
-        avatarNumber:3
-
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:600
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:3
-
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:605
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:3
-
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:575
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:4
+        avatarNumber:13
     }
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:false
-        sport:false
+
+        friends:true
+        sport:true
         telephone:false
         livre:false
+
+        arrivalTime:570
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:13
+    }
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:true
+        sport:true
+        telephone:false
+        livre:false
+
         arrivalTime:580
+
         activated:false
+
         isUpdate:true
-        isSelecting:true
-        avatarNumber:4
+        isSelecting:false
+        avatarNumber:13
     }
     ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
+        name: "anonymous"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
+        friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:585
+
+        arrivalTime:570
+
         activated:false
-        isUpdate:true
+
+        isUpdate:false
         isSelecting:true
-        avatarNumber:4
+        avatarNumber:14
     }
     ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:false
         sport:false
-        telephone:true
+        telephone:false
         livre:false
+
         arrivalTime:590
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:4
-    }
-    ListElement {
-        name: "#4"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:660
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:4
-    }
-    ListElement {
-        name: "#4"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:true
-        arrivalTime:675
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:4
-    }
-    ListElement {
-        name: "#4"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:true
-        arrivalTime:735
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:4
-    }
 
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:14
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:590
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:14
+    }
 
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:645
+
+        arrivalTime:610
+
         activated:false
+
         isUpdate:false
         isSelecting:true
-        avatarNumber:5
+        avatarNumber:15
     }
+
     ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
+
+        arrivalTime:620
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:15
+    }
+
+    ListElement {
+        name: "#7"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:630
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:15
+    }
+    ListElement {
+        name: "#3"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
+        friends:false
+        sport:false
+        telephone:false
+        livre:false
+
         arrivalTime:650
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:5
+        avatarNumber:15
     }
     ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:675
+
+        arrivalTime:670
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:5
+        avatarNumber:15
     }
     ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:680
+
+        arrivalTime:690
+
         activated:false
+
         isUpdate:true
         isSelecting:true
-        avatarNumber:5
+        avatarNumber:15
     }
     ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
         friends:true
         sport:false
         telephone:true
-        livre:false
-        arrivalTime:695
+        livre:true
+
+        arrivalTime:770
+
         activated:false
+
         isUpdate:true
         isSelecting:false
-        avatarNumber:5
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:true
-        telephone:true
-        livre:false
-        arrivalTime:840
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:5
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:true
-        telephone:true
-        livre:true
-        arrivalTime:850
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:5
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:true
-        sport:true
-        telephone:true
-        livre:true
-        arrivalTime:880
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:5
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:true
-        sport:true
-        telephone:true
-        livre:true
-        arrivalTime:900
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:5
+        avatarNumber:15
     }
 
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:715
+
+        arrivalTime:670
+
         activated:false
+
         isUpdate:false
         isSelecting:true
-        avatarNumber:6
+        avatarNumber:16
     }
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:725
+
+        arrivalTime:700
+
         activated:false
+
         isUpdate:true
         isSelecting:false
-        avatarNumber:6
+        avatarNumber:16
     }
     ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
+
+        arrivalTime:720
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:16
+    }
+    ListElement {
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
+        friends:false
+        sport:false
+        telephone:true
+        livre:false
+
         arrivalTime:730
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:6
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:false
-        sport:true
-        telephone:true
-        livre:false
-        arrivalTime:745
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:6
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:false
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:755
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:6
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:false
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:765
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:6
-    }
 
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:785
         activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:7
-    }
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:805
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:7
-    }
 
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1105
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:7
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1110
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:7
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1120
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:7
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1140
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:7
-    }
-
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1035
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1050
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1080
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1105
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1120
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1175
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1185
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1195
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:8
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1210
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:8
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1190
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:9
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1220
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:9
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1235
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:9
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1250
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:9
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1265
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:9
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1200
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1215
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1230
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1245
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:false
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1260
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:false
-        sport:true
-        telephone:true
-        livre:true
-        arrivalTime:1265
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:false
-        sport:true
-        telephone:true
-        livre:false
-        arrivalTime:1275
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1320
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:10
-    }
-    ListElement {
-        name: "#2"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/2.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1335
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:10
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1325
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1340
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1355
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1360
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#5"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/5.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1370
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#8"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1390
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#8"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
-        friends:false
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1400
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:11
-    }
-    ListElement {
-        name: "#8"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
-        friends:false
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1440
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:11
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1435
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1460
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:1480
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:true
-        telephone:true
-        livre:false
-        arrivalTime:1490
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1500
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1515
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:12
-    }
-    ListElement {
-        name: "#6"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1600
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:12
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1660
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:13
-    }
-
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1675
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:13
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1695
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:13
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1715
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:13
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1735
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:13
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1770
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:13
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:true
-        sport:true
-        telephone:false
-        livre:false
-        arrivalTime:1840
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:13
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1785
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1805
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1820
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1830
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1845
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:true
-        arrivalTime:1865
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:14
-    }
-    ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
-        friends:true
-        sport:false
-        telephone:false
-        livre:true
-        arrivalTime:1880
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:14
-    }
-
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1930
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1940
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#7"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1950
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#3"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1970
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1990
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:2005
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:false
-        arrivalTime:2015
-        activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:15
-    }
-    ListElement {
-        name: "#10"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
-        friends:true
-        sport:false
-        telephone:true
-        livre:true
-        arrivalTime:2055
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:15
-    }
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:1990
-        activated:false
-        isUpdate:false
-        isSelecting:true
-        avatarNumber:16
-    }
-    ListElement {
-        name: "anonymous"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:2020
-        activated:false
-        isUpdate:true
-        isSelecting:false
-        avatarNumber:16
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:false
-        sport:false
-        telephone:false
-        livre:false
-        arrivalTime:2220
-        activated:false
         isUpdate:true
         isSelecting:true
         avatarNumber:16
@@ -1466,12 +1859,16 @@ ListModel {
     ListElement {
         name: "#1"
         img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
         friends:false
-        sport:false
+        sport:true
         telephone:true
         livre:false
-        arrivalTime:2235
+
+        arrivalTime:750
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:16
@@ -1479,25 +1876,16 @@ ListModel {
     ListElement {
         name: "#1"
         img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
+
         friends:false
         sport:true
         telephone:true
         livre:false
-        arrivalTime:2250
+
+        arrivalTime:760
+
         activated:false
-        isUpdate:true
-        isSelecting:true
-        avatarNumber:16
-    }
-    ListElement {
-        name: "#1"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
-        friends:false
-        sport:true
-        telephone:true
-        livre:false
-        arrivalTime:2265
-        activated:false
+
         isUpdate:true
         isSelecting:false
         avatarNumber:16
@@ -1506,12 +1894,16 @@ ListModel {
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2050
+
+        arrivalTime:750
+
         activated:false
+
         isUpdate:false
         isSelecting:true
         avatarNumber:17
@@ -1519,12 +1911,16 @@ ListModel {
     ListElement {
         name: "#6"
         img_url: "qrc:/avatars/avatar_imgs/Primary/6.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2060
+
+        arrivalTime:760
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:17
@@ -1532,12 +1928,16 @@ ListModel {
     ListElement {
         name: "#8"
         img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2080
+
+        arrivalTime:770
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:17
@@ -1545,12 +1945,16 @@ ListModel {
     ListElement {
         name: "#8"
         img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
         friends:true
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2090
+
+        arrivalTime:790
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:17
@@ -1558,12 +1962,16 @@ ListModel {
     ListElement {
         name: "#8"
         img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
         friends:true
         sport:true
         telephone:false
         livre:false
-        arrivalTime:2115
+
+        arrivalTime:800
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:17
@@ -1571,26 +1979,33 @@ ListModel {
     ListElement {
         name: "#8"
         img_url: "qrc:/avatars/avatar_imgs/Primary/8.png"
+
         friends:true
         sport:true
         telephone:false
         livre:false
-        arrivalTime:2130
+
+        arrivalTime:810
+
         activated:false
+
         isUpdate:true
         isSelecting:false
         avatarNumber:17
     }
-
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2130
+
+        arrivalTime:840
+
         activated:false
+
         isUpdate:false
         isSelecting:true
         avatarNumber:18
@@ -1598,12 +2013,16 @@ ListModel {
     ListElement {
         name: "#3"
         img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
         friends:true
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2140
+
+        arrivalTime:850
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:18
@@ -1611,12 +2030,16 @@ ListModel {
     ListElement {
         name: "#3"
         img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:2155
+
+        arrivalTime:890
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:18
@@ -1624,12 +2047,16 @@ ListModel {
     ListElement {
         name: "#3"
         img_url: "qrc:/avatars/avatar_imgs/Primary/3.png"
+
         friends:true
         sport:false
         telephone:true
         livre:true
-        arrivalTime:2165
+
+        arrivalTime:910
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:18
@@ -1637,12 +2064,16 @@ ListModel {
     ListElement {
         name: "#4"
         img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
         friends:true
         sport:false
         telephone:true
         livre:true
-        arrivalTime:2220
+
+        arrivalTime:960
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:18
@@ -1650,12 +2081,16 @@ ListModel {
     ListElement {
         name: "#4"
         img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
         friends:true
         sport:false
         telephone:false
         livre:true
-        arrivalTime:2230
+
+        arrivalTime:970
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:18
@@ -1663,12 +2098,16 @@ ListModel {
     ListElement {
         name: "#4"
         img_url: "qrc:/avatars/avatar_imgs/Primary/4.png"
+
         friends:true
         sport:false
         telephone:false
         livre:true
-        arrivalTime:2240
+
+        arrivalTime:980
+
         activated:false
+
         isUpdate:true
         isSelecting:false
         avatarNumber:18
@@ -1677,12 +2116,16 @@ ListModel {
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2265
+
+        arrivalTime:890
+
         activated:false
+
         isUpdate:false
         isSelecting:true
         avatarNumber:19
@@ -1690,12 +2133,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:false
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2275
+
+        arrivalTime:900
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1703,12 +2150,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:false
         telephone:false
         livre:false
-        arrivalTime:2290
+
+        arrivalTime:910
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1716,12 +2167,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:false
         telephone:true
         livre:false
-        arrivalTime:2300
+
+        arrivalTime:920
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1729,12 +2184,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:true
         telephone:true
         livre:false
-        arrivalTime:2315
+
+        arrivalTime:930
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1742,12 +2201,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:true
         telephone:true
         livre:true
-        arrivalTime:2330
+
+        arrivalTime:950
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1755,12 +2218,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:true
         telephone:true
         livre:false
-        arrivalTime:2350
+
+        arrivalTime:980
+
         activated:false
+
         isUpdate:true
         isSelecting:true
         avatarNumber:19
@@ -1768,12 +2235,16 @@ ListModel {
     ListElement {
         name: "#7"
         img_url: "qrc:/avatars/avatar_imgs/Primary/7.png"
+
         friends:true
         sport:true
         telephone:true
         livre:false
-        arrivalTime:2365
+
+        arrivalTime:1030
+
         activated:false
+
         isUpdate:true
         isSelecting:false
         avatarNumber:19
