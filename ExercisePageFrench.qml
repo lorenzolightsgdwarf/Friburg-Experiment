@@ -7,19 +7,30 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
 Item {
 
-    ExDifficileStateFrench{
-        id:exDifficileStateFrench
+    ExTresDifficileStateFrench{
+        id:exBlackStep2State
     }
     ExTresFacileStateFrench{
-        id:exTresFacileStateFrench
+        id:exBlueStep1State
     }
 
     ExTresDifficileStateFrench{
-        id:exTresDifficileStateFrench
+        id:exBlackStep1State
     }
-    ExFacileStateFrench{
-        id:exFacileStateFrench
+    ExTresFacileStateFrench{
+        id:exBlueStep2State
     }
+
+    property bool hide_avatars: if(window.page==2 && window.condition==2)
+                                   return true
+                               else if(window.page==2 && window.condition==1)
+                                   return false
+                               else if(window.page==3 && window.condition==2)
+                                       return false
+                               else if(window.page==3 && window.condition==1)
+                                       return true
+                               else return false;
+
 
 
     MessageDialog{
@@ -28,14 +39,13 @@ Item {
         icon: StandardIcon.Question
         modality:Qt.ApplicationModal
         standardButtons: StandardButton.Abort | StandardButton.Ok
-        title:"Déconnexion"
-        text:"Es-tu sûr de vouloir te déconnecter?"
+        title:window.page==3 ? "Déconnexion" : "Ètape suivante"
+        text:window.page==3 ? "Es-tu sûr de vouloir te déconnecter?" : "Es-tu sûr de vouloir passer à l’étape suivante?"
         onRejected:{visible=false}
         onAccepted:{
             if(exercises_loader.item)
                 exercises_loader.item.pushState();
-            logger.write_finish();
-            window.page=2
+            window.page++
         }
     }
 
@@ -53,7 +63,7 @@ Item {
         online_avatars_update_timer.getNextArrivalTime()
         online_avatars_update_timer.interval=1000*(online_avatars_update_timer.current_value-
                                                    online_avatars_update_timer.last_value);
-        online_avatars_update_timer.start();
+        if(!hide_avatars) online_avatars_update_timer.start();
     }
 
     Timer{
@@ -98,6 +108,7 @@ Item {
     }
 
     Text {
+        visible: !hide_avatars
         wrapMode: Text.WordWrap
         text: "Les autres connectés:"
         verticalAlignment:Text.AlignVCenter
@@ -117,7 +128,7 @@ Item {
         id:people_placeHolder
         visible: true
         color: "transparent"
-        border.color: "black"
+        border.color: !hide_avatars? "black":"transparent"
         border.width: 1
         width: Math.min(current_online_avatars.count*(height+2),0.8*parent.width)
         height: 0.16*parent.height
@@ -125,6 +136,7 @@ Item {
         anchors.left: parent.left
         anchors.margins: 10
         ListView{
+            visible: !hide_avatars
             id:list_view_online_avatars
             anchors.fill: parent
             anchors.margins: 1
@@ -175,10 +187,10 @@ Item {
                         name: "none"
                     },
                     State {
-                        name: "tres_facile"
+                        name: "blue_step_1"
                         PropertyChanges {
-                            target: tres_facile
-                            color: exTresFacileStateFrench.complete ? "#441976d2" :"#1976d2"
+                            target: blue_step_1
+                            color: exBlueStep1State.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
@@ -186,49 +198,15 @@ Item {
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("exercise_blu",exTresFacileStateFrench.complete,exTresFacileStateFrench.answer_toString())
+                                logger.write_select_exercise("exercise_French_blu",exBlueStep1State.complete,exBlueStep1State.answer_toString())
                             }
                         }
                     },
                     State {
-                        name: "facile"
+                        name: "black_step_1"
                         PropertyChanges {
-                            target: facile
-                            color: exFacileStateFrench.complete ? "#441976d2" :"#1976d2"
-                        }
-                        PropertyChanges {
-                            target: exercises_loader
-                            source:"qrc:/ExerciseFacileFrench.qml"
-                        }
-                        StateChangeScript{
-                            script: {
-                                logger.write_select_exercise("exercise_green",exFacileStateFrench.complete,exFacileStateFrench.answer_toString())
-                            }
-                        }
-                    },
-
-                    State {
-                        name: "difficile"
-                        PropertyChanges {
-                            target: difficile
-                            color: exDifficileStateFrench.complete ? "#441976d2" :"#1976d2"
-                        }
-                        PropertyChanges {
-                            target: exercises_loader
-                            source:"qrc:/ExerciseDifficileFrench.qml"
-                        }
-                        StateChangeScript{
-                            script: {
-                                logger.write_select_exercise("exercise_red",exDifficileStateFrench.complete,exDifficileStateFrench.answer_toString())
-                            }
-                        }
-                    },
-
-                    State {
-                        name: "tres_difficile"
-                        PropertyChanges {
-                            target: tres_difficile
-                            color: exTresDifficileStateFrench.complete ? "#441976d2" :"#1976d2"
+                            target: black_step_1
+                            color: exBlackStep1State.complete ? "#441976d2" :"#1976d2"
                         }
                         PropertyChanges {
                             target: exercises_loader
@@ -236,14 +214,48 @@ Item {
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("exercise_black",exTresDifficileStateFrench.complete,exTresDifficileStateFrench.answer_toString())
+                                logger.write_select_exercise("exercise_French_black",exBlackStep1State.complete,exBlackStep1State.answer_toString())
+                            }
+                        }
+                    },
+                    State {
+                        name: "blue_step_2"
+                        PropertyChanges {
+                            target: blue_step_2
+                            color: exBlueStep2State.complete ? "#441976d2" :"#1976d2"
+                        }
+                        PropertyChanges {
+                            target: exercises_loader
+                            source:"qrc:/ExerciseTresFacileFrench_v2.qml"
+                        }
+                        StateChangeScript{
+                            script: {
+                                logger.write_select_exercise("exercise_French_blu",exBlueStep2State.complete,exBlueStep2State.answer_toString())
+                            }
+                        }
+                    },
+
+                    State {
+                        name: "black_step_2"
+                        PropertyChanges {
+                            target: black_step_2
+                            color: exBlackStep2State.complete ? "#441976d2" :"#1976d2"
+                        }
+                        PropertyChanges {
+                            target: exercises_loader
+                            source:"qrc:/ExerciseTresDifficileFrench_v2.qml"
+                        }
+                        StateChangeScript{
+                            script: {
+                                logger.write_select_exercise("exercise_French_black",exBlackStep2State.complete,exBlackStep2State.answer_toString())
                             }
                         }
                     }
                 ]
                 Rectangle{
-                    id:tres_difficile
-                    color: exTresDifficileStateFrench.complete? "#4490caf9" :"#90caf9"
+                    id:black_step_1
+                    visible: window.page==2
+                    color: exBlackStep1State.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
@@ -256,16 +268,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exTresDifficileStateFrench.complete)
+                                   if(exBlackStep1State.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exTresDifficileStateFrench.complete)
+                                   if(exBlackStep1State.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exTresDifficileStateFrench.complete? "#44000000" : "black"
+                        color:exBlackStep1State.complete? "#44000000" : "black"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -278,13 +290,14 @@ Item {
                         onClicked: {
                             if(exercises_loader.item)
                                 exercises_loader.item.pushState();
-                            ex_selector.state="tres_difficile";
+                            ex_selector.state="black_step_1";
                         }
                     }
                 }
                 Rectangle{
-                    id:difficile
-                    color: exDifficileStateFrench.complete? "#4490caf9" :"#90caf9"
+                    id:blue_step_1
+                    visible: window.page==2
+                    color: exBlueStep1State.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
@@ -297,16 +310,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exDifficileStateFrench.complete)
+                                   if(exBlueStep1State.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exDifficileStateFrench.complete)
+                                   if(exBlueStep1State.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exDifficileStateFrench.complete? "#44FF0000" : "red"
+                        color:exBlueStep1State.complete? "#440000ff" :"blue"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -319,13 +332,14 @@ Item {
                         onClicked: {
                             if(exercises_loader.item)
                                 exercises_loader.item.pushState();
-                            ex_selector.state="difficile";
+                            ex_selector.state="blue_step_1";
                         }
                     }
                 }
                 Rectangle{
-                    id:facile
-                    color: exFacileStateFrench.complete? "#4490caf9" :"#90caf9"
+                    id:blue_step_2
+                    visible: window.page==3
+                    color: exBlueStep2State.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
@@ -338,16 +352,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exFacileStateFrench.complete)
+                                   if(exBlueStep2State.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exFacileStateFrench.complete)
+                                   if(exBlueStep2State.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exFacileStateFrench.complete? "#4400FF00" :"green"
+                        color:exBlueStep2State.complete? "#4400FF00" :"blue"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -360,13 +374,14 @@ Item {
                         onClicked: {
                             if(exercises_loader.item)
                                 exercises_loader.item.pushState();
-                            ex_selector.state="facile";
+                            ex_selector.state="blue_step_2";
                         }
                     }
                 }
                 Rectangle{
-                    id:tres_facile
-                    color: exTresFacileStateFrench.complete? "#4490caf9" :"#90caf9"
+                    id:black_step_2
+                    visible: window.page==3
+                    color: exBlackStep2State.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Text {
@@ -379,16 +394,16 @@ Item {
                         fontSizeMode: Text.Fit;
                         minimumPointSize: 12;
                         color: if(parent.color=="#90caf9" || parent.color=="#4490caf9"){
-                                   if(exTresFacileStateFrench.complete)
+                                   if(exBlackStep2State.complete)
                                        return"#44000000"
                                    else return "black"
                                }else
-                                   if(exTresFacileStateFrench.complete)
+                                   if(exBlackStep2State.complete)
                                        return"#44FFFFFF"
                                    else return "white"
                     }
                     Rectangle{
-                        color:exTresFacileStateFrench.complete? "#440000ff" :"blue"
+                        color:exBlackStep2State.complete? "#44FF0000" : "black"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -401,7 +416,7 @@ Item {
                         onClicked: {
                             if(exercises_loader.item)
                                 exercises_loader.item.pushState();
-                            ex_selector.state="tres_facile";
+                            ex_selector.state="black_step_2";
                         }
                     }
                 }
@@ -416,6 +431,7 @@ Item {
         }
     }
     Text {
+        visible: !hide_avatars
         id:moi_connecte
         wrapMode: Text.WordWrap
         width: current_avatar.width-10
@@ -432,6 +448,7 @@ Item {
     }
     AvatarDelegate{
         id:current_avatar
+        isPlaceHolder: hide_avatars
         anchors.top:people_placeHolder.top
         anchors.right: parent.right
         anchors.rightMargin: 10
@@ -463,10 +480,11 @@ Item {
         anchors.margins: 10
         Rectangle{
             id:avatar_selection_placeHolder
-            color: "#64b5f6"
+            color: !hide_avatars ? "#64b5f6" : "transparent"
             width: parent.width
             height: 0.8*parent.height
             ColumnLayout{
+                visible: !hide_avatars
                 width: parent.width-17;
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.top: parent.top
@@ -528,6 +546,7 @@ Item {
                 }
             }
             ScrollBar {
+                visible: !hide_avatars
                 id: verticalScrollBar
                 width: 12; height: parent.height-12
                 anchors.right: parent.right
@@ -543,8 +562,8 @@ Item {
             anchors.horizontalCenter: avatar_selection_placeHolder.horizontalCenter
             anchors.top: avatar_selection_placeHolder.bottom
             anchors.margins: 10
-            width: text_deconnexion.width+10
-            height: text_deconnexion.height+10
+            width: parent.width-20
+            height: parent.height*0.15
             color: "#00e676"
             radius: 10
             layer.enabled: true
@@ -553,13 +572,16 @@ Item {
             }
             Text{
                 id:text_deconnexion
-                text:"Déconnexion"
+                text: window.page==3 ? "Déconnexion" :"Passer à l’étape suivante"
                 font.family: "Helvetica"
                 font.pointSize: 16
                 font.bold: true
                 fontSizeMode: Text.Fit;
+                wrapMode: Text.WordWrap
                 minimumPointSize: 12;
-                anchors.centerIn: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                anchors.fill: parent
             }
             MouseArea{
                 anchors.fill: parent;

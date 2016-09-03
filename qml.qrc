@@ -32,6 +32,8 @@
         <file>brush.png</file>
         <file>eraser.png</file>
         <file>exercises/exTresDifficileMath.png</file>
+        <file>ExerciseTresDifficileFrench_v2.qml</file>
+        <file>ExerciseTresFacileFrench_v2.qml</file>
     </qresource>
     <qresource prefix="/avatars">
         <file>avatar_imgs/Primary/1.png</file>

@@ -20,21 +20,18 @@ Item {
         id:exTresDifficileStateMath
     }
 
-
-
     MessageDialog{
         id:deconnexion_dialog
         visible:false;
         icon: StandardIcon.Question
         modality:Qt.ApplicationModal
         standardButtons: StandardButton.Abort | StandardButton.Ok
-        title:"Déconnexion"
-        text:"Es-tu sûr de vouloir te déconnecter?"
+        title:"Ètape suivante"
+        text:"Es-tu sûr de vouloir passer à l’étape suivante?"
         onRejected:{visible=false}
         onAccepted:{
             if(exercises_loader.item)
                 exercises_loader.item.pushState();
-            logger.write_finish();
             window.page=2
         }
     }
@@ -53,7 +50,7 @@ Item {
         online_avatars_update_timer.getNextArrivalTime()
         online_avatars_update_timer.interval=1000*(online_avatars_update_timer.current_value-
                                                    online_avatars_update_timer.last_value);
-        online_avatars_update_timer.start();
+        //online_avatars_update_timer.start();
     }
 
     Timer{
@@ -99,6 +96,7 @@ Item {
     }
 
     Text {
+        visible: false
         wrapMode: Text.WordWrap
         text: "Les autres connectés:"
         verticalAlignment:Text.AlignVCenter
@@ -116,16 +114,14 @@ Item {
     }
     Rectangle{
         id:people_placeHolder
-        visible: true
         color: "transparent"
-        border.color: "black"
-        border.width: 1
         width: Math.min(current_online_avatars.count*(height+2),0.8*parent.width)
         height: 0.16*parent.height
         anchors.bottom: ex_placeHolder.top
         anchors.left: parent.left
         anchors.margins: 10
         ListView{
+            visible: false
             id:list_view_online_avatars
             anchors.fill: parent
             anchors.margins: 1
@@ -187,7 +183,7 @@ Item {
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("exercise_blu",exTresFacileStateMath.complete,exTresFacileStateMath.answer_toString())
+                                logger.write_select_exercise("exercise_math_blu",exTresFacileStateMath.complete,exTresFacileStateMath.answer_toString())
                             }
                         }
                     },
@@ -203,7 +199,7 @@ Item {
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("exercise_green",exFacileStateMath.complete,exFacileStateMath.answer_toString())
+                                logger.write_select_exercise("exercise_math_black",exFacileStateMath.complete,exFacileStateMath.answer_toString())
                             }
                         }
                     },
@@ -237,12 +233,13 @@ Item {
                         }
                         StateChangeScript{
                             script: {
-                                logger.write_select_exercise("exercise_black",exTresDifficileStateMath.complete,exTresDifficileStateMath.answer_toString())
+                                logger.write_select_exercise("exercise_blue",exTresDifficileStateMath.complete,exTresDifficileStateMath.answer_toString())
                             }
                         }
                     }
                 ]
                 Rectangle{
+                    visible: false
                     id:tres_difficile
                     color: exTresDifficileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
@@ -284,6 +281,7 @@ Item {
                     }
                 }
                 Rectangle{
+                    visible: false
                     id:difficile
                     color: exDifficileStateMath.complete? "#4490caf9" :"#90caf9"
                     Layout.fillHeight: true
@@ -348,7 +346,7 @@ Item {
                                    else return "white"
                     }
                     Rectangle{
-                        color:exFacileStateMath.complete? "#4400FF00" :"green"
+                        color:exFacileStateMath.complete? "#4400FF00" :"black"
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.height-10
                         height: width
@@ -365,6 +363,7 @@ Item {
                         }
                     }
                 }
+
                 Rectangle{
                     id:tres_facile
                     color: exTresFacileStateMath.complete? "#4490caf9" :"#90caf9"
@@ -417,6 +416,7 @@ Item {
         }
     }
     Text {
+        visible: false
         id:moi_connecte
         wrapMode: Text.WordWrap
         width: current_avatar.width-10
@@ -433,6 +433,7 @@ Item {
     }
     AvatarDelegate{
         id:current_avatar
+        isPlaceHolder: true
         anchors.top:people_placeHolder.top
         anchors.right: parent.right
         anchors.rightMargin: 10
@@ -464,10 +465,11 @@ Item {
         anchors.margins: 10
         Rectangle{
             id:avatar_selection_placeHolder
-            color: "#64b5f6"
+            color: "#0064b5f6"
             width: parent.width
             height: 0.8*parent.height
             ColumnLayout{
+                visible: false
                 width: parent.width-17;
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.top: parent.top
@@ -531,6 +533,7 @@ Item {
                 }
             }
             ScrollBar {
+                visible: false
                 id: verticalScrollBar
                 width: 12; height: parent.height-12
                 anchors.right: parent.right
@@ -545,9 +548,10 @@ Item {
         Rectangle{
             anchors.horizontalCenter: avatar_selection_placeHolder.horizontalCenter
             anchors.top: avatar_selection_placeHolder.bottom
+
             anchors.margins: 10
-            width: text_deconnexion.width+10
-            height: text_deconnexion.height+10
+            width: parent.width-20
+            height: parent.height*0.15
             color: "#00e676"
             radius: 10
             layer.enabled: true
@@ -556,13 +560,16 @@ Item {
             }
             Text{
                 id:text_deconnexion
-                text:"Déconnexion"
+                text:"Passer à l’étape suivante"
                 font.family: "Helvetica"
                 font.pointSize: 16
                 font.bold: true
                 fontSizeMode: Text.Fit;
                 minimumPointSize: 12;
-                anchors.centerIn: parent
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                anchors.fill: parent
             }
             MouseArea{
                 anchors.fill: parent;

@@ -19,13 +19,13 @@ Item{
     }
 
     function pullState(){
-        root.enabled=!exBlackStep1State.complete
-        answer.text=exBlackStep1State.answer
+        root.enabled=!exBlackStep2State.complete
+        answer.text=exBlackStep2State.answer
     }
 
     function pushState(){
-        exBlackStep1State.answer=answer.text
-        exBlackStep1State.writeState();
+        exBlackStep2State.answer=answer.text
+        exBlackStep2State.writeState();
     }
     ColumnLayout{
         anchors.fill: parent
@@ -44,7 +44,7 @@ Item{
             id:text_area
             Layout.fillWidth: true
             Layout.preferredHeight: 0.5*root.height
-            text:"<b>La gare fantôme</b><br><i>    Simon roule en voiture avec son père en direction de Paris. Il est triste de quitter sa grand-mère qu’il ne voit qu’une fois par an.</i><br>    C’est bien un 2 janvier, comme il les a en horreur. Il pense à sa grand-mère qu’il laisse derrière lui. Il la revoit ce matin, saluant de la main leur départ, toute petite au balcon de son appartement. Il la revoit aussi fouillant pour lui dans ses vieilles photographies, au fond d’une valise en carton plus grande qu’elle. Il l’entend lui raconter sa jeunesse et son mari, le grand-père de Simon, mort bien longtemps avant d’avoir pu le connaître, quelque part dans le nord de la France, au début de la guerre.<br>    «Peut-être pas très loin de cette autoroute », songe Simon.<br>    La neige commence à tomber. Les essuie-glaces sont en panne. On n’y voit plus rien. La voiture s’immobilise sur la bande d’arrêt d’urgence.<br>Simon refuse de rester seul à l’intérieur tandis que son père sort pour lever le capot. Même si ce n’est pour un instant. Il ne se sent pas à l’aise dans cette voiture aux vitres couvertes de neige. Il sort.[…]"
+            text:"<b>La gare fantôme</b><br><i>Fabian, après s’être disputé avec son ami Alex, a grimpé au sommet d’un rocher et ne veut plus en bouger.</i><br>– Fabian?<br>Je tressaille. La voix de ma mère paraît tomber du ciel. Elle se tient sur la falaise qui domine le rocher, à deux mètres au-dessus de moi. Pour arriver, elle a dû contourner tout le village, jusqu’au terrain de foot. C’est le seul endroit d’où l’on peut gagner la forêt sans être vu. Elle ne voulait pas qu’on l’aperçoive de la route, c’est clair. Maintenant, elle s’appuie contre un pin pour reprendre son souffle. Je lui lance:<br>– Qu’est-ce qu’il y a encore?<br>C’est la troisième fois qu’elle rapplique, depuis le début de l’après-midi.<br>Les deux premières, elle a essayé de me raisonner d’en bas comme le pasteur tout à l’heure.<br>– Descends. Le soir tombe.<br>– J’ai pas envie.<br>– La mère d’Alex n’est plus fâchée contre toi.<br>– La mère d’Alex, elle peut aller...<br>– Si tu n’es pas en bas dans une heure, j’appelle les pompiers! Il n’est pas question que tu descendes tout seul dans le noir.<br>– Je ne descendrai pas, ni dans le noir ni autrement. Je reste ici.<br>– Je peux enfin savoir pourquoi?"
             readOnly: true
             font.family: "Helvetica"
             font.pointSize: 12
@@ -88,7 +88,7 @@ Item{
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    exBlackStep1State.complete=true;
+                    exBlackStep2State.complete=true;
                     pushState();
                     root.enabled=false;
                 }

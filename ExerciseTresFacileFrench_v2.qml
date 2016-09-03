@@ -9,12 +9,12 @@ Item{
     id:root
 
     function pullState(){
-        root.enabled=!exBlueStep1State.complete
+        root.enabled=!exBlueStep2State.complete
 
     }
 
     function pushState(){
-        exBlueStep1State.writeState();
+        exBlueStep2State.writeState();
     }
 
     ColumnLayout{
@@ -40,46 +40,46 @@ Item{
             }
             Text{
                 id:a1
-                text:"S’immobiliser"
+                text:"étonné"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a1==text ? true: false
+                font.strikeout:exBlueStep2State.a1==text ? true: false
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        exBlueStep1State.a1=parent.text;
+                        exBlueStep2State.a1=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
                     }
                 }
             }
             Text{
                 id:a2
-                text:"s’arrêter"
+                text:"surpris"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a1==text
+                font.strikeout:exBlueStep2State.a1==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        exBlueStep1State.a1=parent.text;
+                        exBlueStep2State.a1=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
                     }
                 }
             }
             Text{
                 id:a3
-                text:"s’impatienter"
+                text:"éberlué"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a1==text
+                font.strikeout:exBlueStep2State.a1==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a1=parent.text;
+                        exBlueStep2State.a1=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -88,16 +88,16 @@ Item{
             }
             Text{
                 id:a4
-                text:"se tenir sans bouger"
+                text:"stupéfait"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a1==text
+                font.strikeout:exBlueStep2State.a1==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a1=parent.text;
+                        exBlueStep2State.a1=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -106,16 +106,33 @@ Item{
             }
             Text{
                 id:a5
-                text:"se fixer"
+                text:"rassuré"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a1==text
+                font.strikeout:exBlueStep2State.a1==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a1=parent.text;
+                        exBlueStep2State.a1=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
+
+
+                    }
+                }
+            }
+            Text{
+                id:a6
+                text:"déconcerté"
+                font.family: "Helvetica"
+                font.pointSize: 12
+                style: Text.Raised; styleColor: "#AAAAAA"
+                font.strikeout:exBlueStep2State.a1==text
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        exBlueStep2State.a1=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -133,16 +150,16 @@ Item{
             }
             Text{
                 id:b1
-                text:"À l’aise"
+                text:"aversion"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a2==text
+                font.strikeout:exBlueStep2State.a2==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a2=parent.text;
+                        exBlueStep2State.a2=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -151,16 +168,16 @@ Item{
             }
             Text{
                 id:b2
-                text:"rassuré"
+                text:"dégoût"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a2==text
+                font.strikeout:exBlueStep2State.a2==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a2=parent.text;
+                        exBlueStep2State.a2=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -169,16 +186,16 @@ Item{
             }
             Text{
                 id:b3
-                text:"embarrassé"
+                text:"répugnance"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a2==text
+                font.strikeout:exBlueStep2State.a2==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a2=parent.text;
+                        exBlueStep2State.a2=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -187,16 +204,16 @@ Item{
             }
             Text{
                 id:b4
-                text:"tranquille"
+                text:"sympathie"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a2==text
+                font.strikeout:exBlueStep2State.a2==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a2=parent.text;
+                        exBlueStep2State.a2=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -205,16 +222,16 @@ Item{
             }
             Text{
                 id:b5
-                text:"calme"
+                text:"répulsion"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a2==text
+                font.strikeout:exBlueStep2State.a2==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a2=parent.text;
+                        exBlueStep2State.a2=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -233,16 +250,16 @@ Item{
             }
             Text{
                 id:c1
-                text:"Grimper"
+                text:"obligeante"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a3==text
+                font.strikeout:exBlueStep2State.a3==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a3=parent.text;
+                        exBlueStep2State.a3=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -251,16 +268,16 @@ Item{
             }
             Text{
                 id:c2
-                text:"aggraver"
+                text:"serviable"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a3==text
+                font.strikeout:exBlueStep2State.a3==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a3=parent.text;
+                        exBlueStep2State.a3=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -269,16 +286,16 @@ Item{
             }
             Text{
                 id:c3
-                text:"escalader"
+                text:"aimable"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a3==text
+                font.strikeout:exBlueStep2State.a3==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a3=parent.text;
+                        exBlueStep2State.a3=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -287,16 +304,16 @@ Item{
             }
             Text{
                 id:c4
-                text:"gravir"
+                text:"empressée"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a3==text
+                font.strikeout:exBlueStep2State.a3==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a3=parent.text;
+                        exBlueStep2State.a3=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -305,16 +322,16 @@ Item{
             }
             Text{
                 id:c5
-                text:"monter"
+                text:"malveillante"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a3==text
+                font.strikeout:exBlueStep2State.a3==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a3=parent.text;
+                        exBlueStep2State.a3=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -333,15 +350,15 @@ Item{
             }
             Text{
                 id:d1
-                text:"Fugitivement"
+                text:"frémir"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a4==text
+                font.strikeout:exBlueStep2State.a4==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        exBlueStep1State.a4=parent.text;
+                        exBlueStep2State.a4=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -350,16 +367,16 @@ Item{
             }
             Text{
                 id:d2
-                text:"rapidement"
+                text:"trembler"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a4==text
+                font.strikeout:exBlueStep2State.a4==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a4=parent.text;
+                        exBlueStep2State.a4=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -368,16 +385,16 @@ Item{
             }
             Text{
                 id:d3
-                text:"furtivement"
+                text:"trembloter"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a4==text
+                font.strikeout:exBlueStep2State.a4==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a4=parent.text;
+                        exBlueStep2State.a4=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -386,16 +403,16 @@ Item{
             }
             Text{
                 id:d4
-                text:"abondamment"
+                text:"gémir"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a4==text
+                font.strikeout:exBlueStep2State.a4==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a4=parent.text;
+                        exBlueStep2State.a4=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -404,16 +421,34 @@ Item{
             }
             Text{
                 id:d5
-                text:"brièvement"
+                text:"grelotter"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a4==text
+                font.strikeout:exBlueStep2State.a4==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a4=parent.text;
+                        exBlueStep2State.a4=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
+
+
+                    }
+                }
+            }
+            Text{
+                id:d6
+                text:"frissonner"
+                font.family: "Helvetica"
+                font.pointSize: 12
+                style: Text.Raised; styleColor: "#AAAAAA"
+                font.strikeout:exBlueStep2State.a4==text
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+
+                        exBlueStep2State.a4=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -433,16 +468,16 @@ Item{
             }
             Text{
                 id:e1
-                text:"Anodin"
+                text:"farouche"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -451,16 +486,16 @@ Item{
             }
             Text{
                 id:e2
-                text:"inquiétant"
+                text:"sauvage"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -469,16 +504,16 @@ Item{
             }
             Text{
                 id:e3
-                text:"inoffensif"
+                text:"rude"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -487,16 +522,16 @@ Item{
             }
             Text{
                 id:e4
-                text:"pacifique"
+                text:"indompté"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -505,16 +540,16 @@ Item{
             }
             Text{
                 id:e5
-                text:"doux"
+                text:"docile"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -523,16 +558,16 @@ Item{
             }
             Text{
                 id:e6
-                text:"calme"
+                text:"ombrageux"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a5==text
+                font.strikeout:exBlueStep2State.a5==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a5=parent.text;
+                        exBlueStep2State.a5=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -552,16 +587,16 @@ Item{
             }
             Text{
                 id:f1
-                text:"Chaleureuse"
+                text:"se lamenter"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -570,16 +605,16 @@ Item{
             }
             Text{
                 id:f2
-                text:"cordiale"
+                text:"gémir"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -588,16 +623,16 @@ Item{
             }
             Text{
                 id:f3
-                text:"avenante"
+                text:"geindre"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -606,16 +641,16 @@ Item{
             }
             Text{
                 id:f4
-                text:"sympathique"
+                text:"pleurer"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -624,16 +659,16 @@ Item{
             }
             Text{
                 id:f5
-                text:"ironique"
+                text:"se plaindre"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -642,16 +677,16 @@ Item{
             }
             Text{
                 id:f6
-                text:"affectueuse"
+                text:"se rassurer"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a6==text
+                font.strikeout:exBlueStep2State.a6==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a6=parent.text;
+                        exBlueStep2State.a6=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -670,16 +705,16 @@ Item{
             }
             Text{
                 id:g1
-                text:"Effleurer"
+                text:"paniqué"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -688,16 +723,16 @@ Item{
             }
             Text{
                 id:g2
-                text:"gratter"
+                text:"affolé"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -706,16 +741,16 @@ Item{
             }
             Text{
                 id:g3
-                text:"érafler"
+                text:"freiné"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -724,16 +759,16 @@ Item{
             }
             Text{
                 id:g4
-                text:"toucher"
+                text:"effrayé"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -742,16 +777,16 @@ Item{
             }
             Text{
                 id:g5
-                text:"frôler"
+                text:"apeuré"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -760,16 +795,16 @@ Item{
             }
             Text{
                 id:g6
-                text:"caresser"
+                text:"épouvanté"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -778,16 +813,16 @@ Item{
             }
             Text{
                 id:g7
-                text:"attacher"
+                text:"tourmenté"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a7==text
+                font.strikeout:exBlueStep2State.a7==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a7=parent.text;
+                        exBlueStep2State.a7=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -807,16 +842,16 @@ Item{
             }
             Text{
                 id:h1
-                text:"Lacérer"
+                text:"disgrâce"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a8==text
+                font.strikeout:exBlueStep2State.a8==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a8=parent.text;
+                        exBlueStep2State.a8=parent.text;
 
                         logger.write_general_action("Mouse_Select",parent.text)
 
@@ -825,16 +860,16 @@ Item{
             }
             Text{
                 id:h2
-                text:"déchirer"
+                text:"malheur"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a8==text
+                font.strikeout:exBlueStep2State.a8==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a8=parent.text;
+                        exBlueStep2State.a8=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -843,16 +878,16 @@ Item{
             }
             Text{
                 id:h3
-                text:"décimer"
+                text:"mésaventure"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a8==text
+                font.strikeout:exBlueStep2State.a8==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a8=parent.text;
+                        exBlueStep2State.a8=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -861,16 +896,16 @@ Item{
             }
             Text{
                 id:h4
-                text:"couper"
+                text:"chance"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a8==text
+                font.strikeout:exBlueStep2State.a8==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a8=parent.text;
+                        exBlueStep2State.a8=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -879,16 +914,34 @@ Item{
             }
             Text{
                 id:h5
-                text:"mettre en lambeaux"
+                text:"désastre"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a8==text
+                font.strikeout:exBlueStep2State.a8==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a8=parent.text;
+                        exBlueStep2State.a8=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
+
+
+                    }
+                }
+            }
+            Text{
+                id:h6
+                text:"infortune"
+                font.family: "Helvetica"
+                font.pointSize: 12
+                style: Text.Raised; styleColor: "#AAAAAA"
+                font.strikeout:exBlueStep2State.a8==text
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+
+                        exBlueStep2State.a8=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -908,16 +961,16 @@ Item{
             }
             Text{
                 id:i1
-                text:"Boucler"
+                text:"divertir"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -926,16 +979,16 @@ Item{
             }
             Text{
                 id:i2
-                text:"fermer"
+                text:"égayer"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -944,16 +997,16 @@ Item{
             }
             Text{
                 id:i3
-                text:"enclore"
+                text:"distraire"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -962,16 +1015,16 @@ Item{
             }
             Text{
                 id:i4
-                text:"boucher"
+                text:"accabler"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -980,16 +1033,16 @@ Item{
             }
             Text{
                 id:i5
-                text:"s’enfuir"
+                text:"réjouir"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -998,16 +1051,34 @@ Item{
             }
             Text{
                 id:i6
-                text:"emprisonner"
+                text:"amuser"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a9==text
+                font.strikeout:exBlueStep2State.a9==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a9=parent.text;
+                        exBlueStep2State.a9=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
+
+
+                    }
+                }
+            }
+            Text{
+                id:i7
+                text:"plaisanter"
+                font.family: "Helvetica"
+                font.pointSize: 12
+                style: Text.Raised; styleColor: "#AAAAAA"
+                font.strikeout:exBlueStep2State.a9==text
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+
+                        exBlueStep2State.a9=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1026,16 +1097,16 @@ Item{
             }
             Text{
                 id:j1
-                text:"Plaisant"
+                text:"civilité"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a10==text
+                font.strikeout:exBlueStep2State.a10==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a10=parent.text;
+                        exBlueStep2State.a10=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1044,16 +1115,16 @@ Item{
             }
             Text{
                 id:j2
-                text:"divertissant"
+                text:"courtoisie"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a10==text
+                font.strikeout:exBlueStep2State.a10==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a10=parent.text;
+                        exBlueStep2State.a10=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1062,16 +1133,16 @@ Item{
             }
             Text{
                 id:j3
-                text:"morose"
+                text:"politesse"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a10==text
+                font.strikeout:exBlueStep2State.a10==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a10=parent.text;
+                        exBlueStep2State.a10=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1080,16 +1151,16 @@ Item{
             }
             Text{
                 id:j4
-                text:"drôle"
+                text:"amabilité"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a10==text
+                font.strikeout:exBlueStep2State.a10==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a10=parent.text;
+                        exBlueStep2State.a10=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1098,16 +1169,34 @@ Item{
             }
             Text{
                 id:j5
-                text:"réjouissant"
+                text:"délicatesse"
                 font.family: "Helvetica"
                 font.pointSize: 12
                 style: Text.Raised; styleColor: "#AAAAAA"
-                font.strikeout:exBlueStep1State.a10==text
+                font.strikeout:exBlueStep2State.a10==text
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
 
-                        exBlueStep1State.a10=parent.text;
+                        exBlueStep2State.a10=parent.text;
+                        logger.write_general_action("Mouse_Select",parent.text)
+
+
+                    }
+                }
+            }
+            Text{
+                id:j6
+                text:"stratagème"
+                font.family: "Helvetica"
+                font.pointSize: 12
+                style: Text.Raised; styleColor: "#AAAAAA"
+                font.strikeout:exBlueStep2State.a10==text
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+
+                        exBlueStep2State.a10=parent.text;
                         logger.write_general_action("Mouse_Select",parent.text)
 
 
@@ -1139,7 +1228,7 @@ Item{
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    exBlueStep1State.complete=true;
+                    exBlueStep2State.complete=true;
                     pushState();
                     root.enabled=false;
                 }

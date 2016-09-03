@@ -3,6 +3,7 @@ import QtGraphicalEffects 1.0
 Rectangle {
     property bool transparent: true
     property bool highlighted: false
+    property bool isPlaceHolder:false
     //only when not inteactive
     property bool selectingAvatar:false
     property string name:"invalid";
@@ -12,19 +13,23 @@ Rectangle {
     property alias mini_avatar_livre_enabled: mini_avatar_livre.checked
     property alias mini_avatar_sport_enabled: mini_avatar_sport.checked
     property alias mini_avatar_telephone_enabled: mini_avatar_telephone.checked
-    color: selectingAvatar ? "#68efad" : "white"
-    border.color: "black"
+    color: if(isPlaceHolder) return "transparent"
+            else if(selectingAvatar) return  "#68efad"
+            else return  "white"
+    border.color: isPlaceHolder ? "transparent" : "black"
     border.width: highlighted ? 5 : 0
     width: 100
     height: width* main_avatar.implicitHeight/main_avatar.implicitWidth
+
     Image {
+        visible: !isPlaceHolder
         id: main_avatar
         fillMode: Image.PreserveAspectFit
         anchors.fill: parent
         anchors.margins: 5
     }
     Text{
-        visible: selectingAvatar
+        visible: selectingAvatar && !isPlaceHolder
         id:choosing_text
         width: parent.width
         text: "…choisit son avatar"
@@ -59,7 +64,7 @@ Rectangle {
     }
     Row{
         id:avatar_row
-        visible: !interactive
+        visible: !interactive && !isPlaceHolder
         opacity: !interactive ? 1 : 1-like_text.opacity
         width: parent.width
         height: 0.20*parent.width
@@ -159,7 +164,7 @@ Rectangle {
     }
     Rectangle{
         id:like_text
-        visible: interactive
+        visible: interactive && !isPlaceHolder
         width: 2*parent.width/3
         height: 0.20*parent.width
         anchors.bottom: parent.bottom
@@ -199,7 +204,7 @@ Rectangle {
     }
     Loader{
         anchors.fill: parent
-        active:transparent
+        active:transparent && !isPlaceHolder
         sourceComponent: Colorize {
             anchors.fill: parent
             source: main_avatar

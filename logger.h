@@ -41,6 +41,7 @@ private:
             m_telephone_enable,m_answer,m_exercise_completed,m_user_code;
     QTime m_time;
     QTime m_time_since_start;
+    int m_step;
 };
 
 #endif // LOGGER_H

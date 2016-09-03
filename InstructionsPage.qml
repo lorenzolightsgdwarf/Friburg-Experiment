@@ -11,7 +11,7 @@ Rectangle {
 
     anchors.fill: parent
     color:"#e3f2fd"
-
+    Component.onCompleted: student_code.forceActiveFocus()
     MessageDialog{
         id:dialog
         visible:false;
@@ -48,14 +48,9 @@ Rectangle {
                         dialog.visible=true;
                     }
                     else{
-                    if(window.condition==0)
-                        logger.write_read_instruction("",student_code.text)
-                    else if(window.condition==1)
-                        logger.write_read_instruction("Maths",student_code.text)
-                    else if(window.condition==2)
-                        logger.write_read_instruction("French",student_code.text)
-                    welcome.visible=false;
-                    instruction.visible=true}
+                        logger.write_read_instruction("Condition_"+window.condition,student_code.text)
+                        welcome.visible=false;
+                        instruction.visible=true}
                 }
             }
             Column{
@@ -85,6 +80,7 @@ Rectangle {
             }
             TextField{
                 id:student_code
+                focus: true
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             }
@@ -132,29 +128,31 @@ Rectangle {
             anchors.fill: parent
             anchors.margins: 10
             color:"#2962ff"
-            ColumnLayout{
+            Column{
                 id:instruction_zone
                 spacing: 10
                 anchors.fill: parent
                 anchors.margins: 20
                 Text{
                     id:title
-                    text:"<b><center>Consignes</center></b><br><ul><li>Réalise les 4 exercices proposés, dans l’ordre qui te convient</li>
-<br><li>Lorsque tu auras terminé les exercices, clique sur le bouton <i>Déconnexion</i>.</li></ul>"
+                    text:"<b><center>Consignes</center></b><br><ul>
+<li>L’activité se déroule en 3 étapes. A la fin de chaque étape, clique sur le bouton <i>Passer à l’étape</i> suivante pour continuer</li>
+<br><li>A chaque étape, réalise les exercices proposés dans l’ordre qui te convient.</li><br>
+<li>Lorsque tu auras terminé la 3<sup>ème</sup> étape, clique sur le bouton <i>Déconnexion</i>, et remplis le questionnaire distribué.</li></ul>"
                     color: "white"
                     wrapMode: Text.WordWrap
                     font.family: "Helvetica"
                     fontSizeMode: Text.Fit;
-                    minimumPointSize: 12;
+                    minimumPointSize: 8;
                     font.pointSize: 24
-                    Layout.alignment: Qt.AlignHCenter
                     antialiasing: true
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
+                    height: parent.height-150
                 }
                 Item{
-                    Layout.preferredHeight: 150
-                    Layout.fillWidth: true
+                    height: 150
+                    width: parent.width
                     Rectangle{
                         anchors.centerIn:  parent
                         anchors.margins: 10
@@ -176,7 +174,6 @@ Rectangle {
                             onPressed: parent.layer.enabled=false
                             onReleased: parent.layer.enabled=true
                             onClicked: {
-                                logger.write_start_experiment()
                                 window.page=1
                             }
                         }

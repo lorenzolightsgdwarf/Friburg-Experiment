@@ -16,23 +16,43 @@ Window {
     title: qsTr("Friburg Experiment")
     color: "#e3f2fd"
 
-    property int condition:1 //Math==1 French==2
+    property int condition:1 //
     property bool exitFlag: false
 
-    property int page:0
+    property int page:0 //steps of the description
+
     onPageChanged: {
-        if(page==1 && window.condition==1){
+        if(page==1){
+            //put here the logger start
+            logger.write_start_experiment()
             page_loader.source="qrc:/ExercisePageMath.qml"
         }
-        else if(page==1 && window.condition==2){
+        else if(page<=3){
+            logger.write_finish()
+            logger.write_start_experiment()
+            page_loader.source=""
             page_loader.source="qrc:/ExercisePageFrench.qml"
         }
-        else if(page==2){
-            page_loader.source="qrc:/QuestionnairePage.qml"
+        else{
+            logger.write_finish()
+            page_loader.source=""
+            exit_dialog.visible=true
         }
 
     }
 
+    MessageDialog{
+        id:exit_dialog
+        visible:false;
+        modality:Qt.ApplicationModal
+        standardButtons: StandardButton.Ok
+        title:"Merci"
+        text:"Merci pour ta participation!"
+        onAccepted:{
+            exitFlag=true
+            Qt.quit()
+        }
+    }
 
     Component.onCompleted: logger.init();
 
@@ -43,8 +63,8 @@ Window {
             messageBox.title="Error"
             messageBox.visible=true
         }
-
     }
+
     MessageDialog {
         id: messageBox
         visible: false
