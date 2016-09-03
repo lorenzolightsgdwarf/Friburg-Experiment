@@ -12,6 +12,19 @@ Rectangle {
     anchors.fill: parent
     color:"#e3f2fd"
     Component.onCompleted: student_code.forceActiveFocus()
+
+    Keys.onPressed: {
+        if (event.key == Qt.Key_Return ||event.key == Qt.Key_Enter ) {
+            if(student_code.text.length<=0){
+                dialog.visible=true;
+            }
+            else{
+                logger.write_read_instruction("Condition_"+window.condition,student_code.text)
+                welcome.visible=false;
+                instruction.visible=true}
+        }
+    }
+
     MessageDialog{
         id:dialog
         visible:false;
