@@ -12,6 +12,19 @@ Rectangle {
     anchors.fill: parent
     color:"#e3f2fd"
 
+    MessageDialog{
+        id:dialog
+        visible:false;
+        icon: StandardIcon.Question
+        modality:Qt.ApplicationModal
+        standardButtons: StandardButton.Ok
+        title:"Instruction"
+        text:"Saisis ton code s'il vous plaît"
+        onAccepted:{
+            visible=false
+        }
+    }
+
     Rectangle{
         id:welcome
         color:"#2196f3"
@@ -27,8 +40,29 @@ Rectangle {
             anchors.fill: parent
             anchors.margins: 10
             color:"#2962ff"
-            Text {
+            MouseArea{
+                enabled: !settings.visible
+                anchors.fill: parent
+                onClicked: {
+                    if(student_code.text.length<=0){
+                        dialog.visible=true;
+                    }
+                    else{
+                    if(window.condition==0)
+                        logger.write_read_instruction("",student_code.text)
+                    else if(window.condition==1)
+                        logger.write_read_instruction("Maths",student_code.text)
+                    else if(window.condition==2)
+                        logger.write_read_instruction("French",student_code.text)
+                    welcome.visible=false;
+                    instruction.visible=true}
+                }
+            }
+            Column{
                 anchors.centerIn: parent
+                spacing: 10
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
                 text: "Bienvenue!<br>Cliquer pour commencer"
                 color:"white"
                 horizontalAlignment:Text.AlignHCenter
@@ -37,19 +71,22 @@ Rectangle {
                 minimumPointSize: 12;
                 font.pointSize: 24
                 antialiasing: true
+
             }
-            MouseArea{
-                enabled: !settings.visible
-                anchors.fill: parent
-                onClicked: {
-                    if(window.condition==0)
-                        logger.write_read_instruction("")
-                    else if(window.condition==1)
-                        logger.write_read_instruction("Maths")
-                    else if(window.condition==2)
-                        logger.write_read_instruction("French")
-                    welcome.visible=false;
-                    instruction.visible=true}
+            Text{
+                anchors.horizontalCenter: parent.horizontalCenter
+                text:"Saisis ton code :"
+                color:"white"
+                horizontalAlignment:Text.AlignHCenter
+                font.family: "Helvetica"
+                fontSizeMode: Text.Fit;
+                minimumPointSize: 12;
+                font.pointSize: 15;
+            }
+            TextField{
+                id:student_code
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
             }
             Rectangle{
                 visible: false
@@ -77,6 +114,7 @@ Rectangle {
                 }
             }
         }
+
     }
     Rectangle{
         id:instruction

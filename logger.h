@@ -18,7 +18,7 @@ public:
     void setError(QString);
     Q_INVOKABLE void init();
     Q_INVOKABLE void write_header();
-    Q_INVOKABLE void write_read_instruction(QString condition);
+    Q_INVOKABLE void write_read_instruction(QString condition, QString user_code);
     Q_INVOKABLE void write_start_experiment();
     Q_INVOKABLE void write_select_exercise(QString exercise, bool exercise_completed,QString text);
     Q_INVOKABLE void write_exercise_answer(QString text, bool exercise_completed);
@@ -38,7 +38,7 @@ private:
 
     QString m_condition,m_exercise,m_online_avatar_step,
             m_selected_avatar,m_friend_enable,m_livre_enable,m_sport_enable,
-            m_telephone_enable,m_answer,m_exercise_completed;
+            m_telephone_enable,m_answer,m_exercise_completed,m_user_code;
     QTime m_time;
     QTime m_time_since_start;
 };
