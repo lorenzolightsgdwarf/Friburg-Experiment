@@ -1649,15 +1649,15 @@ ListModel {
         avatarNumber:14
     }
     ListElement {
-        name: "#9"
-        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
 
         friends:false
         sport:false
         telephone:false
         livre:false
 
-        arrivalTime:590
+        arrivalTime:620
 
         activated:false
 
@@ -1665,7 +1665,74 @@ ListModel {
         isSelecting:true
         avatarNumber:14
     }
+    ListElement {
+        name: "#1"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/1.png"
 
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:630
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:14
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:false
+
+        arrivalTime:650
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:14
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:true
+
+        arrivalTime:680
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:14
+    }
+    ListElement {
+        name: "#9"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/9.png"
+
+        friends:true
+        sport:false
+        telephone:false
+        livre:true
+
+        arrivalTime:690
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:false
+        avatarNumber:14
+    }
     ListElement {
         name: "anonymous"
         img_url: "qrc:/avatars/avatar_imgs/Primary/0.png"
@@ -1779,7 +1846,24 @@ ListModel {
         telephone:true
         livre:true
 
-        arrivalTime:770
+        arrivalTime:710
+
+        activated:false
+
+        isUpdate:true
+        isSelecting:true
+        avatarNumber:15
+    }
+    ListElement {
+        name: "#10"
+        img_url: "qrc:/avatars/avatar_imgs/Primary/10.png"
+
+        friends:true
+        sport:false
+        telephone:true
+        livre:true
+
+        arrivalTime:740
 
         activated:false
 
